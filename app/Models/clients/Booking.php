@@ -14,6 +14,14 @@ class Booking extends Model
 
     public function createBooking($data)
     {
+        // Thêm timestamps nếu chưa có
+        if (!isset($data['created_at'])) {
+            $data['created_at'] = now();
+        }
+        if (!isset($data['updated_at'])) {
+            $data['updated_at'] = now();
+        }
+        
         // Chèn dữ liệu và trả về ID của bản ghi vừa tạo
         return DB::table($this->table)->insertGetId($data);
     }
@@ -21,7 +29,10 @@ class Booking extends Model
     public function cancelBooking($bookingId){
         return DB::table($this->table)
         ->where('bookingId', $bookingId)
-        ->update(['bookingStatus' => 'c']);
+        ->update([
+            'bookingStatus' => 'c',
+            'updated_at' => now()
+        ]);
     }
 
 

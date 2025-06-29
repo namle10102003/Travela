@@ -724,6 +724,13 @@ $(document).ready(function () {
                 data: {
                     amount: totalPrice,
                     tourId: $("input[name='tourId']").val(),
+                    fullName: $("#username").val(),
+                    email: $("#email").val(),
+                    tel: $("#tel").val(),
+                    address: $("#address").val(),
+                    numAdults: $("#numAdults").val(),
+                    numChildren: $("#numChildren").val(),
+                    totalPrice: totalPrice,
                     _token: $('input[name="_token"]').val(),
                 },
                 success: function (response) {

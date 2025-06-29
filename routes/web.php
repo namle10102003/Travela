@@ -77,7 +77,7 @@ Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])
 
 //Payment with Momo
 Route::post('/create-momo-payment', [BookingController::class, 'createMomoPayment'])->name('createMomoPayment');
-
+Route::get('/momo-callback', [App\Http\Controllers\clients\BookingController::class, 'handlePaymentMomoCallback'])->name('momo.callback');
 
 //Tour booked
 Route::get('/tour-booked', [TourBookedController::class, 'index'])->name('tour-booked')->middleware('checkLoginClient');
