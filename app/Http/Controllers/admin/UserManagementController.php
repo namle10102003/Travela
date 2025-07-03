@@ -86,8 +86,6 @@ class UserManagementController extends Controller
     private function getStatusText($status)
     {
         switch ($status) {
-            case 'b':
-                return 'Đã chặn';
             case 'd':
                 return 'Đã xóa';
             default:

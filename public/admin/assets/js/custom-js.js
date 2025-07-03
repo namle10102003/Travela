@@ -36,7 +36,7 @@ $(document).ready(function () {
         });
     });
 
-    $("#btn-ban, #btn-delete, #btn-unban, #btn-restore").click(function () {
+    $("#btn-delete, #btn-restore").click(function () {
         var button = $(this);
         let dataAttr = button.data("attr");
 
@@ -62,15 +62,10 @@ $(document).ready(function () {
                         .find(".brief i")
                         .text(response.status);
                     button.parent().find("button").hide(); // Ẩn tất cả các nút
-                    if (status === "b") {
-                        button.parent().find("#btn-unban").show();
-                    } else if (status === "d") {
+                    if (status === "d") {
                         button.parent().find("#btn-restore").show();
                     } else {
-                        button
-                            .parent()
-                            .find("#btn-ban, #btn-delete, #btn-active")
-                            .show();
+                        button.parent().find("#btn-delete, #btn-active").show();
                     }
                     toastr.success(response.message);
                 } else {

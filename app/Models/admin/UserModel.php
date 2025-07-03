@@ -30,5 +30,12 @@ class UserModel extends Model
             ->update($data); 
     }
 
+    public function forceDeleteUser($id)
+    {
+        return DB::table($this->table)
+            ->where('userId', $id)
+            ->delete();
+    }
+
 
 }
