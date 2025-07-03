@@ -1,6 +1,6 @@
 <!-- footer area start -->
 <footer class="main-footer bgs-cover overlay rel z-1 pb-25"
-    style="background-image: url({{ asset('clients/assets/images/backgrounds/footer.jpg') }});">
+    style="background-image: url('/clients/assets/images/backgrounds/footer.jpg');">
     <div class="container">
         <div class="footer-top pt-100 pb-30">
             <div class="row justify-content-between">
@@ -100,12 +100,11 @@
                             <h5>Liên hệ</h5>
                         </div>
                         <ul class="list-style-one">
-                            <li><i class="fal fa-map-marked-alt"></i> 470 Tran Dai Nghia, Ngu Hanh Son, Da Nang</li>
+                            <li><i class="fal fa-map-marked-alt"></i> 77 Phan Thanh, Thanh Khe, Da Nang</li>
                             <li><i class="fal fa-envelope"></i> <a
-                                    href="mailto:minhdien.dev@gmail.com">minhdien.dev@gmail.com</a></li>
+                                    href="mailto:Namle10102003@gmail.com">Namle10102003@gmail.com</a></li>
                             <li><i class="fal fa-clock"></i> Thứ 2 - Thứ 6, 08am - 05pm</li>
-                            <li><i class="fal fa-phone-volume"></i> <a href="callto:+88012334588">+880 (123)
-                                    345 88</a></li>
+                            <li><i class="fal fa-phone-volume"></i> <a href="callto:+88012334588">+84 935564091</a></li>
                         </ul>
                     </div>
                 </div>
@@ -117,7 +116,7 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="copyright-text text-center text-lg-start">
-                        <p>@Copy 2024 <a href="{{ route('home') }}">Travela</a>, All rights reserved</p>
+                        <p>@Copy 2025 <a href="{{ route('home') }}">Travela</a>, All rights reserved</p>
                     </div>
                 </div>
                 <div class="col-lg-7 text-center text-lg-end">

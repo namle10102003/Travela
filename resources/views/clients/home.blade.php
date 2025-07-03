@@ -77,7 +77,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="destination1.html" class="theme-btn mt-10 style-two">
+                    <a href="{{ route('destination') }}" class="theme-btn mt-10 style-two">
                         <span data-hover="Khám phá Điểm đến">Khám phá Điểm đến</span>
                         <i class="fal fa-arrow-right"></i>
                     </a>
@@ -238,11 +238,15 @@
 
 <!-- CTA Area start -->
 <section class="cta-area pt-100 rel z-1">
+    <style>
+        .cta-bg1 {background-image: url('/clients/assets/images/cta/cta1.jpg');}
+        .cta-bg2 {background-image: url('/clients/assets/images/cta/cta2.jpg');}
+        .cta-bg3 {background-image: url('/clients/assets/images/cta/cta3.jpg');}
+    </style>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-4 col-md-6" data-aos="zoom-in-down" data-aos-duration="1500" data-aos-offset="50">
-                <div class="cta-item"
-                    style="background-image: url( {{ asset('clients/assets/images/cta/cta1.jpg') }});">
+                <div class="cta-item cta-bg1">
                     <span class="category">Khám Phá Vẻ Đẹp Văn Hóa Việt</span>
                     <h2>Tìm hiểu những giá trị văn hóa độc đáo của các vùng miền Việt Nam.</h2>
                     <a href="{{ route('tours') }}" class="theme-btn style-two bgc-secondary">
@@ -253,8 +257,7 @@
             </div>
             <div class="col-xl-4 col-md-6" data-aos="zoom-in-down" data-aos-delay="50" data-aos-duration="1500"
                 data-aos-offset="50">
-                <div class="cta-item"
-                    style="background-image: url( {{ asset('clients/assets/images/cta/cta2.jpg') }});">
+                <div class="cta-item cta-bg2">
                     <span class="category">Bãi biển Sea</span>
                     <h2>Bãi trong xanh dạt dào ở Việt Nam</h2>
                     <a href="{{ route('tours') }}" class="theme-btn style-two">
@@ -265,8 +268,7 @@
             </div>
             <div class="col-xl-4 col-md-6" data-aos="zoom-in-down" data-aos-delay="100" data-aos-duration="1500"
                 data-aos-offset="50">
-                <div class="cta-item"
-                    style="background-image: url( {{ asset('clients/assets/images/cta/cta3.jpg') }});">
+                <div class="cta-item cta-bg3">
                     <span class="category">Thác nước</span>
                     <h2>Thác nước lớn nhất Việt Nam</h2>
                     <a href="{{ route('tours') }}" class="theme-btn style-two bgc-secondary">

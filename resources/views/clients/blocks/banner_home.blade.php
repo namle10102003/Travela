@@ -4,7 +4,7 @@
         <h1 class="hero-title" data-aos="flip-up" data-aos-delay="50" data-aos-duration="1500" data-aos-offset="50">
             Tours Du Lịch</h1>
         <div class="main-hero-image bgs-cover"
-            style="background-image: url({{ asset('clients/assets/images/hero/hero.jpg') }});">
+            style="background-image: url('/clients/assets/images/hero/hero.jpg');">
         </div>
     </div>
     <form action="{{ route('search') }}" method="GET" id="search_form">
