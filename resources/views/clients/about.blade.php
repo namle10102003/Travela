@@ -121,7 +121,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="destination-details.html" class="theme-btn mt-10 style-two">
+                    <a href="{{ route('destination') }}" class="theme-btn mt-10 style-two">
                         <span data-hover="Explore Destinations">Khám phá các điểm đến</span>
                         <i class="fal fa-arrow-right"></i>
                     </a>
@@ -156,15 +156,15 @@
             <div class="col-xl-3 col-lg-4 col-sm-6">
                 <div class="team-item hover-content" data-aos="fade-up" data-aos-duration="1500"
                     data-aos-offset="50">
-                    <img src="{{ asset('clients/assets/images/team/guide-dien.jpg') }}" alt="Guide">
+                    <img src="{{ asset('clients/assets/images/team/guide-nam.jpg') }}" alt="Guide">
                     <div class="content">
-                        <h6>NGUYEN MINH DIEN</h6>
+                        <h6>LE NGUYEN NHAT NAM</h6>
                         <span class="designation">Founder</span>
                         <div class="social-style-one inner-content">
-                            <a href="contact.html"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.facebook.com/dienne.dev"><i class="fab fa-facebook-f"></i></a>
-                            <a href="contact.html"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/@dienne248"><i class="fab fa-youtube"></i></a>
+                            <a href="{{ route('contact') }}"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/namle10102003/?locale=vi_VN"><i class="fab fa-facebook-f"></i></a>
+                            <a href="{{ route('contact') }}"><i class="fab fa-instagram"></i></a>
+                            <a href="{{ route('contact') }}"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
@@ -172,15 +172,15 @@
             <div class="col-xl-3 col-lg-4 col-sm-6">
                 <div class="team-item hover-content" data-aos="fade-up" data-aos-duration="1500"
                     data-aos-offset="50">
-                    <img src="{{ asset('clients/assets/images/team/guide-ngan.jpg') }}" alt="Guide">
+                    <img src="{{ asset('clients/assets/images/team/guide-linh.jpg') }}" alt="Guide">
                     <div class="content">
-                        <h6>BAO NGAN</h6>
-                        <span class="designation">Co-founder</span>
+                        <h6>HOANG XUAN LINH</h6>
+                        <span class="designation">Co-Founder</span>
                         <div class="social-style-one inner-content">
-                            <a href="contact.html"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.facebook.com/dienne.dev"><i class="fab fa-facebook-f"></i></a>
-                            <a href="contact.html"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/@dienne248"><i class="fab fa-youtube"></i></a>
+                            <a href="{{ route('contact') }}"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/xuanlinh.hoang.9?locale=vi_VN"><i class="fab fa-facebook-f"></i></a>
+                            <a href="{{ route('contact') }}"><i class="fab fa-instagram"></i></a>
+                            <a href="{{ route('contact') }}"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
@@ -288,6 +288,15 @@
 </div>
 <!-- Client Logo Area end -->
 
-
+<style>
+    .team-item img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        height: 350px;
+        max-height: 350px;
+        border-radius: 16px;
+    }
+</style>
 
 @include('clients.blocks.footer')

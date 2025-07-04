@@ -104,7 +104,7 @@
                             <li><i class="fal fa-envelope"></i> <a
                                     href="mailto:Namle10102003@gmail.com">Namle10102003@gmail.com</a></li>
                             <li><i class="fal fa-clock"></i> Thứ 2 - Thứ 6, 08am - 05pm</li>
-                            <li><i class="fal fa-phone-volume"></i> <a href="callto:+88012334588">+84 935564091</a></li>
+                            <li><i class="fal fa-phone-volume"></i> <a href="callto:+84935564091">+84 935564091</a></li>
                         </ul>
                     </div>
                 </div>
