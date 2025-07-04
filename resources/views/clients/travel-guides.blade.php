@@ -22,7 +22,7 @@
                         <li>Cơ quan trải nghiệm</li>
                         <li>Đội ngũ chuyên nghiệp</li>
                     </ul>
-                    <a href="about.html" class="theme-btn style-two">
+                    <a href="{{ route('about') }}" class="theme-btn style-two">
                         <span data-hover="Khám phá Guides">Khám phá Guides</span>
                         <i class="fal fa-arrow-right"></i>
                     </a>
@@ -61,31 +61,33 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-xl-3 col-lg-4 col-sm-6">
-                <div class="team-item hover-content" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
-                    <img src="{{ asset('clients/assets/images/team/guide-dien.jpg') }}" alt="Guide">
+                <div class="team-item hover-content" data-aos="fade-up" data-aos-duration="1500"
+                    data-aos-offset="50">
+                    <img src="{{ asset('clients/assets/images/team/guide-nam.jpg') }}" alt="Guide">
                     <div class="content">
-                        <h6>DEV DIEN</h6>
+                        <h6>LE NGUYEN NHAT NAM</h6>
                         <span class="designation">Founder</span>
                         <div class="social-style-one inner-content">
-                            <a href="https://www.facebook.com/dienne.dev"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.facebook.com/dienne.dev"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.facebook.com/dienne.dev"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/@dienne248"><i class="fab fa-youtube"></i></a>
+                            <a href="{{ route('contact') }}"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/namle10102003/?locale=vi_VN"><i class="fab fa-facebook-f"></i></a>
+                            <a href="{{ route('contact') }}"><i class="fab fa-instagram"></i></a>
+                            <a href="{{ route('contact') }}"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-sm-6">
-                <div class="team-item hover-content" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
-                    <img src="{{ asset('clients/assets/images/team/guide-ngan.jpg') }}" alt="Guide">
+               <div class="team-item hover-content" data-aos="fade-up" data-aos-duration="1500"
+                    data-aos-offset="50">
+                    <img src="{{ asset('clients/assets/images/team/guide-linh.jpg') }}" alt="Guide">
                     <div class="content">
-                        <h6>BAO NGAN</h6>
-                        <span class="designation">Co-founder</span>
+                        <h6>HOANG XUAN LINH</h6>
+                        <span class="designation">Co-Founder</span>
                         <div class="social-style-one inner-content">
-                            <a href="contact.html"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.facebook.com/dienne.dev"><i class="fab fa-facebook-f"></i></a>
-                            <a href="contact.html"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/@dienne248"><i class="fab fa-youtube"></i></a>
+                            <a href="{{ route('contact') }}"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/xuanlinh.hoang.9?locale=vi_VN"><i class="fab fa-facebook-f"></i></a>
+                            <a href="{{ route('contact') }}"><i class="fab fa-instagram"></i></a>
+                            <a href="{{ route('contact') }}"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
@@ -94,7 +96,7 @@
                 <div class="team-item hover-content" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
                     <img src="{{ asset('clients/assets/images/team/guide1.jpg') }}" alt="Guide">
                     <div class="content">
-                        <h6>MINH TOAN</h6>
+                        <h6>HOANG LONG</h6>
                         <span class="designation">Travel Guide</span>
                         <div class="social-style-one inner-content">
                             <a href="contact.html"><i class="fab fa-twitter"></i></a>
@@ -110,7 +112,7 @@
                     data-aos-offset="50">
                     <img src="{{ asset('clients/assets/images/team/guide2.jpg') }}" alt="Guide">
                     <div class="content">
-                        <h6>TRONG HAI</h6>
+                        <h6>YEN NHI</h6>
                         <span class="designation">Senior Guide</span>
                         <div class="social-style-one inner-content">
                             <a href="contact.html"><i class="fab fa-twitter"></i></a>
@@ -126,7 +128,7 @@
                     data-aos-duration="1500" data-aos-offset="50">
                     <img src="{{ asset('clients/assets/images/team/guide3.jpg') }}" alt="Guide">
                     <div class="content">
-                        <h6>NGOC THU</h6>
+                        <h6>DINH SANG</h6>
                         <span class="designation">Travel Guide</span>
                         <div class="social-style-one inner-content">
                             <a href="contact.html"><i class="fab fa-twitter"></i></a>
@@ -142,7 +144,7 @@
                     data-aos-duration="1500" data-aos-offset="50">
                     <img src="{{ asset('clients/assets/images/team/guide4.jpg') }}" alt="Guide">
                     <div class="content">
-                        <h6>DUC ANH</h6>
+                        <h6>HUU HUNG</h6>
                         <span class="designation">Travel Guide</span>
                         <div class="social-style-one inner-content">
                             <a href="contact.html"><i class="fab fa-twitter"></i></a>
@@ -174,7 +176,7 @@
                     data-aos-offset="50">
                     <img src="{{ asset('clients/assets/images/team/guide6.jpg') }}" alt="Guide">
                     <div class="content">
-                        <h6>CONG LAM</h6>
+                        <h6>MAI THUYEN</h6>
                         <span class="designation">Senior Guide</span>
                         <div class="social-style-one inner-content">
                             <a href="contact.html"><i class="fab fa-twitter"></i></a>
@@ -189,6 +191,17 @@
     </div>
 </section>
 <!-- Team Area end -->
+
+<style>
+    .team-item img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        height: 350px;
+        max-height: 350px;
+        border-radius: 16px;
+    }
+</style>
 
 
 @include('clients.blocks.new_letter')
