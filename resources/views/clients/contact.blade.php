@@ -1,20 +1,35 @@
 @include('clients.blocks.header')
 @include('clients.blocks.banner')
 
-
 <!-- Contact Info Area start -->
 <section class="contact-info-area pt-100 rel z-1">
+    <style>
+        .contact-info-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.03);
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .contact-info-area .col-md-6 {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-4">
-                <div class="contact-info-content mb-30 rmb-55" data-aos="fade-up" data-aos-duration="1500"
-                    data-aos-offset="50">
+                <div class="contact-info-content mb-30 rmb-55" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
                     <div class="section-title mb-30">
                         <h2>Hãy nói chuyện với các hướng dẫn viên du lịch chuyên nghiệp của chúng tôi</h2>
                     </div>
-                    <p>Đội ngũ hỗ trợ tận tâm của chúng tôi luôn sẵn sàng hỗ trợ bạn giải đáp mọi thắc mắc hoặc vấn đề,
-                        cung cấp
-                        các giải pháp nhanh chóng và được cá nhân hóa để đáp ứng nhu cầu của bạn.</p>
+                    <p>Đội ngũ hỗ trợ tận tâm của chúng tôi luôn sẵn sàng hỗ trợ bạn giải đáp mọi thắc mắc hoặc vấn đề, cung cấp các giải pháp nhanh chóng và được cá nhân hóa để đáp ứng nhu cầu của bạn.</p>
                     <div class="features-team-box mt-40">
                         <h6>85+ Thành viên nhóm chuyên gia</h6>
                         <div class="feature-authors">
@@ -32,47 +47,39 @@
             </div>
             <div class="col-lg-8">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="contact-info-item" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50"
-                            data-aos-delay="50">
+                    <div class="col-md-6 d-flex">
+                        <div class="contact-info-item w-100" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50" data-aos-delay="50">
                             <div class="icon"><i class="fas fa-envelope"></i></div>
                             <div class="content">
                                 <h5>Cần trợ giúp và hỗ trợ</h5>
-                                <div class="text"><i class="far fa-envelope"></i> <a
-                                        href="mailto:minhdien.dev@gmail.com">minhdien.dev@gmail.com</a></div>
+                                <div class="text"><i class="far fa-envelope"></i> <a href="mailto:Namle10102003@gmail.com">Namle10102003@gmail.com</a></div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="contact-info-item" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50"
-                            data-aos-delay="100">
+                    <div class="col-md-6 d-flex">
+                        <div class="contact-info-item w-100" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50" data-aos-delay="100">
                             <div class="icon"><i class="fas fa-phone"></i></div>
                             <div class="content">
                                 <h5>Cần bất kỳ việc khẩn cấp nào</h5>
-                                <div class="text"><i class="far fa-phone"></i> <a href="callto:+0001234588">+000 (123)
-                                        45 88</a></div>
+                                <div class="text"><i class="far fa-phone"></i> <a href="callto:+84935564091">+84 935564091</a></div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="contact-info-item" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50"
-                            data-aos-delay="50">
+                    <div class="col-md-6 d-flex">
+                        <div class="contact-info-item w-100" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50" data-aos-delay="50">
                             <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
                             <div class="content">
-                                <h5>Gia Lai</h5>
-                                <div class="text"><i class="fal fa-map-marker-alt"></i> Cửu An, An Khê, Gia Lai</div>
+                                <h5>Đà Nẵng</h5>
+                                <div class="text"><i class="fal fa-map-marker-alt"></i> Thanh Khê, Đà Nẵng</div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="contact-info-item" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50"
-                            data-aos-delay="100">
+                    <div class="col-md-6 d-flex">
+                        <div class="contact-info-item w-100" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50" data-aos-delay="100">
                             <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
                             <div class="content">
-                                <h5>Kí túc xá Việt Hàn</h5>
-                                <div class="text"><i class="fal fa-map-marker-alt"></i> 470 Trần Đại Nghĩa, Ngũ Hành
-                                    Sơn,
-                                    Thành phố Đà Nẵng</div>
+                                <h5>Trường đại học Bách Khoa Đà Nẵng</h5>
+                                <div class="text"><i class="fal fa-map-marker-alt"></i> 54 Nguyễn Lương Bằng, Liên Chiểu, Thành phố Đà Nẵng</div>
                             </div>
                         </div>
                     </div>
@@ -83,15 +90,13 @@
 </section>
 <!-- Contact Info Area end -->
 
-
 <!-- Contact Form Area start -->
 <section class="contact-form-area py-70 rel z-1">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-7">
                 <div class="comment-form bgc-lighter z-1 rel mb-30 rmb-55">
-                    <form id="contactForm" class="contactForm" name="contactForm" action="{{ route('create-contact') }}"
-                        method="post" data-aos="fade-left" data-aos-duration="1500" data-aos-offset="50">
+                    <form id="contactForm" class="contactForm" name="contactForm" action="{{ route('create-contact') }}" method="post" data-aos="fade-left" data-aos-duration="1500" data-aos-offset="50">
                         @csrf
                         <div class="section-title">
                             <h2>Liên hệ</h2>
@@ -101,22 +106,19 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="name">Họ và tên <span style="color: red">*</span></label>
-                                    <input type="text" id="name" name="name" class="form-control"
-                                        placeholder="Họ và tên" value="" required>
+                                    <input type="text" id="name" name="name" class="form-control" placeholder="Họ và tên" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="phone_number">Số điện thoại <span style="color: red">*</span></label>
-                                    <input type="text" id="phone_number" name="phone_number" class="form-control"
-                                        placeholder="Số điện thoại" value="" required>
+                                    <input type="text" id="phone_number" name="phone_number" class="form-control" placeholder="Số điện thoại" required>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="email">Địa chỉ Email <span style="color: red">*</span></label>
-                                    <input type="email" id="email" name="email" class="form-control"
-                                        placeholder="Nhập email" value="" required>
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="Nhập email" required>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -139,8 +141,7 @@
                 </div>
             </div>
             <div class="col-lg-5">
-                <div class="contact-images-part" data-aos="fade-right" data-aos-duration="1500"
-                    data-aos-offset="50">
+                <div class="contact-images-part" data-aos="fade-right" data-aos-duration="1500" data-aos-offset="50">
                     <div class="row">
                         <div class="col-12">
                             <img src="{{ asset('clients/assets/images/contact/contact1.jpg') }}" alt="Contact">
@@ -163,7 +164,6 @@
 </section>
 <!-- Contact Form Area end -->
 
-
 <!-- Contact Map Start -->
 <div class="contact-map">
     <iframe
@@ -172,6 +172,5 @@
         referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 <!-- Contact Map End -->
-
 
 @include('clients.blocks.footer')
