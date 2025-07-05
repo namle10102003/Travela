@@ -24,32 +24,28 @@
             <div class="row gap-10 destinations-active justify-content-center">
                 @php $count = 0; @endphp
                 @foreach ($tours as $tour)
-                    @if ($count % 3 == 2)
-                        <div class="col-md-6 item domain-{{ $tour->domain }}">
-                        @else
-                            <div class="col-xl-3 col-md-6 item domain-{{ $tour->domain }}">
-                    @endif
-                    <div class="destination-item style-two" data-aos-duration="1500" data-aos-offset="50">
-                        <div class="image" style="max-height: 250px">
-                            <a href="#" class="heart"><i class="fas fa-heart"></i></a>
-                            <img src="{{ asset('admin/assets/images/gallery-tours/' . $tour->images[0]) }}"
-                                alt="Destination">
-                        </div>
-                        <div class="content">
-                            <h6 class="tour-title"><a
-                                    href="{{ route('tour-detail', ['id' => $tour->tourId]) }}">{{ $tour->title }}</a>
-                            </h6>
-                            <span class="time">{{ $tour->time }}</span>
-                            <a href="{{ route('tour-detail', ['id' => $tour->tourId]) }}" class="more"><i
-                                    class="fas fa-chevron-right"></i></a>
+                    <div class="col-lg-4 col-md-6 item domain-{{ $tour->domain }}">
+                        <div class="destination-item style-two" data-aos-duration="1500" data-aos-offset="50">
+                            <div class="image" style="max-height: 250px">
+                                <a href="#" class="heart"><i class="fas fa-heart"></i></a>
+                                <img src="{{ asset('admin/assets/images/gallery-tours/' . $tour->images[0]) }}"
+                                    alt="Destination">
+                            </div>
+                            <div class="content">
+                                <h6 class="tour-title"><a
+                                        href="{{ route('tour-detail', ['id' => $tour->tourId]) }}">{{ $tour->title }}</a>
+                                </h6>
+                                <span class="time">{{ $tour->time }}</span>
+                                <a href="{{ route('tour-detail', ['id' => $tour->tourId]) }}" class="more"><i
+                                        class="fas fa-chevron-right"></i></a>
+                            </div>
                         </div>
                     </div>
-            </div>
-            @php $count++; @endphp
-            @endforeach
+                    @php $count++; @endphp
+                @endforeach
 
+            </div>
         </div>
-    </div>
     </div>
 </section>
 <!-- Popular Destinations Area end -->
