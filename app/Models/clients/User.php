@@ -43,8 +43,7 @@ class User extends Model
         ->join('tbl_checkout', 'tbl_booking.bookingId', '=', 'tbl_checkout.bookingId')
         ->where('tbl_booking.userId', $id)
         ->orderByDesc('tbl_booking.bookingDate')
-        ->take(3)
-        ->get();
+        ->get(); // Bỏ take(3) để lấy tất cả
 
         foreach ($myTours as $tour) {
             // Lấy rating từ tbl_reviews cho mỗi tour

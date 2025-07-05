@@ -63,7 +63,7 @@ class TourDetailController extends Controller
         // dd($tourRecommendations);    
         // dd($avgStar);
 
-        return view('clients.tour-detail', compact('title', 'tourDetail', 'getReviews', 'avgStar', 'countReview', 'checkDisplay','tourRecommendations'));
+        return view('clients.tour-detail', compact('title', 'tourDetail', 'getReviews', 'avgStar', 'countReview', 'checkDisplay', 'tourRecommendations', 'checkReviewExist'));
     }
 
     public function reviews(Request $req)

@@ -41,8 +41,8 @@ class TourBookedController extends Controller
             $hide = '';
         }
 
-        // dd($tour_booked);
-        return view("clients.tour-booked", compact('title', 'tour_booked', 'hide', 'bookingId'));
+        $checkReviewExist = $this->tour->checkReviewExist($tour_booked->tourId, $tour_booked->userId);
+        return view("clients.tour-booked", compact('title', 'tour_booked', 'hide', 'bookingId', 'checkReviewExist'));
     }
 
     public function cancelBooking(Request $req)
