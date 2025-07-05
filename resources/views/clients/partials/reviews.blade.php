@@ -38,7 +38,7 @@
 
                 </div>
                 <span class="time">{{ $tourDetail->time }}</span>
-                <p>{{ $review->comment }}</p>
+                <p>{{ $review->content }}</p>
             </div>
         </div>
     @endforeach

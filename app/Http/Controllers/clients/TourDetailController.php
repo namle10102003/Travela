@@ -4,8 +4,10 @@ namespace App\Http\Controllers\clients;
 
 use App\Http\Controllers\Controller;
 use App\Models\clients\Tours;
+use App\Models\clients\Booking;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class TourDetailController extends Controller
 {
@@ -52,7 +54,7 @@ class TourDetailController extends Controller
         } catch (\Exception $e) {
             // Xử lý lỗi khi gọi API
             $relatedTours = [];
-            \Log::error('Lỗi khi gọi API liên quan: ' . $e->getMessage());
+            Log::error('Lỗi khi gọi API liên quan: ' . $e->getMessage());
         }
 
         $id_toursRe = $relatedTours;
@@ -66,23 +68,44 @@ class TourDetailController extends Controller
 
     public function reviews(Request $req)
     {
-        // dd($req);
         $userId = $this->getUserId();
         $tourId = $req->tourId;
         $message = $req->message;
         $star = $req->rating;
 
+        // Kiểm tra user đã hoàn thành tour chưa
+        $bookingModel = new Booking();
+        $hasFinishedBooking = $bookingModel->checkBooking($tourId, $userId);
+        if (!$hasFinishedBooking) {
+            return response()->json([
+                'error' => true,
+                'message' => 'Bạn chỉ có thể đánh giá khi đã hoàn thành tour này.'
+            ], 403);
+        }
+
+        // Kiểm tra user đã đánh giá tour này chưa
+        if ($this->tours->checkReviewExist($tourId, $userId)) {
+            return response()->json([
+                'error' => true,
+                'message' => 'Bạn đã đánh giá tour này rồi.'
+            ], 409);
+        }
+
         $dataReview = [
             'tourId' => $tourId,
             'userId' => $userId,
-            'comment' => $message,
-            'rating' => $star
+            'content' => $message, // đúng tên cột
+            'rating' => $star,
+            'timestamp' => now(), // thêm timestamp
+            'created_at' => now(),
+            'updated_at' => now()
         ];
 
         $rating = $this->tours->createReviews($dataReview);
         if (!$rating) {
             return response()->json([
-                'error' => true
+                'error' => true,
+                'message' => 'Đã xảy ra lỗi, hãy thử lại sau.'
             ], 500);
         }
         $tourDetail = $this->tours->getTourDetail($tourId);
