@@ -124,16 +124,14 @@
             </div>
             <div class="container">
                 <div class="row justify-content-center">
-                    @php $count = 0; @endphp
+                    {{-- Đã ẩn phần hiện tour phổ biến --}}
+                    {{-- @php $count = 0; @endphp
                     @foreach ($toursPopular as $tour)
                         @if ($count == 2 || $count == 3)
-                            <!-- Cột thứ 3 và thứ 4 sẽ là col-md-6 -->
                             <div class="col-md-6 item ">
-                            @else
-                                <!-- Các cột còn lại sẽ là col-xl-3 col-md-6 -->
-                                <div class="col-xl-3 col-md-6 item ">
+                        @else
+                            <div class="col-xl-3 col-md-6 item ">
                         @endif
-
                         <div class="destination-item style-two" data-aos-duration="1500" data-aos-offset="50">
                             <div class="image" style="max-height: 250px">
                                 <a href="#" class="heart"><i class="fas fa-heart"></i></a>
@@ -149,14 +147,12 @@
                                         class="fas fa-chevron-right"></i></a>
                             </div>
                         </div>
-
-                </div> <!-- Đóng div col-md-6 hoặc col-xl-3 col-md-6 -->
-
+                </div>
                 @php $count++; @endphp
-                @endforeach
+                @endforeach --}}
+                </div>
             </div>
         </div>
-    </div>
     </div>
 </section>
 <!-- Popular Destinations Area end -->
