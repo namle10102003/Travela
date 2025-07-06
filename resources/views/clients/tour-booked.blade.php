@@ -124,7 +124,7 @@
 
                 <input type="hidden" name="bookingId" value="{{ $bookingId }}">
 
-                @if ($tour_booked->bookingStatus != 'c' && $tour_booked->bookingStatus != 'f')
+                @if ($tour_booked->bookingStatus != 'c')
                     <button type="submit" class="booking-btn btn-cancel-booking {{ $hide }}">Hủy Tour</button>
                 @endif
                 @if ($tour_booked->bookingStatus == 'f' && !$checkReviewExist)
