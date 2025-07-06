@@ -58,7 +58,10 @@ class TourDetailController extends Controller
         }
 
         $id_toursRe = $relatedTours;
-
+        // Nếu không có tour liên quan từ API, fallback lấy các tour cùng destination (trừ chính nó)
+        if (empty($id_toursRe) && $tourDetail) {
+            $id_toursRe = $this->tours->getToursByDestination($tourDetail->destination, $id);
+        }
         $tourRecommendations = $this->tours->toursRecommendation($id_toursRe);
         // dd($tourRecommendations);    
         // dd($avgStar);

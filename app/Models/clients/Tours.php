@@ -334,4 +334,15 @@ class Tours extends Model
         return $tourSearch;
     }
 
+    // Lấy danh sách tour cùng destination (trừ chính nó)
+    public function getToursByDestination($destination, $excludeId)
+    {
+        return DB::table($this->table)
+            ->where('destination', $destination)
+            ->where('availability', 1)
+            ->where('tourId', '!=', $excludeId)
+            ->pluck('tourId')
+            ->toArray();
+    }
+
 }
