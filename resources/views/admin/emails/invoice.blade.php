@@ -88,8 +88,8 @@
                     <p style="font-size: 16px; font-weight: bold;">Phương thức thanh toán:</p>
                     @if ($invoice_booking->paymentMethod == 'momo-payment')
                     <h1 style="color: red; font-weight: bold;">Thanh toán tại Momo</h1>
-                    @elseif ($invoice_booking->paymentMethod == 'paypal-payment')
-                    <h1 style="color: red; font-weight: bold;">Thanh toán tại Paypal</h1>
+                    {{-- @elseif ($invoice_booking->paymentMethod == 'paypal-payment')
+                    <h1 style="color: red; font-weight: bold;">Thanh toán tại Paypal</h1> --}}
                     @else
                     <h1 style="color: red; font-weight: bold;">Thanh toán tại văn phòng</h1>
                     @endif

@@ -82,11 +82,11 @@
                 Thanh toán tại văn phòng
             </label>
 
-            <label class="payment-option">
+            {{-- <label class="payment-option">
                 <input type="radio" name="payment" value="paypal-payment" required>
                 <img src="{{ asset('clients/assets/images/booking/cong-thanh-toan-paypal.jpg') }}" alt="PayPal">
                 Thanh toán bằng PayPal
-            </label>
+            </label> --}}
 
             <label class="payment-option">
                 <input type="radio" name="payment" value="momo-payment" required>
@@ -143,7 +143,7 @@
                     <button style="width: 30%" class="booking-btn btn-coupon">Áp dụng</button>
                 </div>
 
-                <div id="paypal-button-container"></div>
+                {{-- <div id="paypal-button-container"></div> --}}
 
                 <button type="submit" class="booking-btn btn-submit-booking">Xác Nhận</button>
 

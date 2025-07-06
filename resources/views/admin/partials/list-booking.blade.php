@@ -23,8 +23,6 @@
         <td>
             @if ($booking->paymentMethod == 'momo-payment')
                 <img src="{{ asset('admin/assets/images/icon/icon_momo.png') }}" class="icon_payment" alt="">
-            @elseif ($booking->paymentMethod == 'paypal-payment')
-                <img src="{{ asset('admin/assets/images/icon/icon_paypal.png') }}" class="icon_payment" alt="">
             @else
                 <img src="{{ asset('admin/assets/images/icon/icon_office.png') }}" class="icon_payment" alt="">
             @endif

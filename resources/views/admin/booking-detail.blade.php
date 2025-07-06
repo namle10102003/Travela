@@ -125,9 +125,6 @@
                                                 @if ($invoice_booking->paymentMethod == 'momo-payment')
                                                     <img src="{{ asset('admin/assets/images/icon/icon_momo.png') }}"
                                                         class="invoice_payment-method" alt="">
-                                                @elseif ($invoice_booking->paymentMethod == 'paypal-payment')
-                                                    <img src="{{ asset('admin/assets/images/icon/icon_paypal.png') }}"
-                                                        class="invoice_payment-method" alt="">
                                                 @else
                                                     <img src="{{ asset('admin/assets/images/icon/icon_office.png') }}"
                                                         alt="">
