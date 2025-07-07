@@ -30,13 +30,13 @@ class AdminManagementController extends Controller
         $email = $request->email;
         $address = $request->address;
 
-        $admin = $this->admin->getAdmin();
+        $username = $request->session()->get('admin');
+        $admin = $this->admin->getAdmin($username);
         $oldPass = $admin->password;
 
         if ($password != $oldPass) {
             $password = md5($password);
         }
-        
 
         $dataUpdate = [
             'fullName' => $fullName,
@@ -44,18 +44,12 @@ class AdminManagementController extends Controller
             'email' => $email,
             'address' => $address
         ];
-        $update = $this->admin->updateAdmin($dataUpdate);
-        $newinfo = $this->admin->getAdmin();
-        if ($update) {
-            return response()->json(
-                [
-                    'success' => true,
-                    'data' => $newinfo
-                ]
-            );
-        } else {
-            return response()->json(['success' => false, 'message' => 'Không có thông tin nào thay đổi!']);
-        }
+        $update = $this->admin->updateAdmin($username, $dataUpdate);
+        $newinfo = $this->admin->getAdmin($username);
+        return response()->json([
+            'success' => true,
+            'data' => $newinfo
+        ]);
     }
 
     public function updateAvatar(Request $req)

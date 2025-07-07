@@ -31,6 +31,7 @@ class LoginAdminController extends Controller
 
         if ($login !== null) {
             $request->session()->put('admin', $username);
+            $request->session()->put('admin_fullname', $login->fullName);
             toastr()->success('Đăng nhập thành công');
             return redirect()->route('admin.dashboard');
         } else {

@@ -12,13 +12,16 @@ class AdminModel extends Model
 
     protected $table = 'tbl_admin';
 
-    public function getAdmin(){
+    public function getAdmin($username = null){
+        if ($username) {
+            return DB::table($this->table)->where('username', $username)->first();
+        }
         return DB::table($this->table)->first();
     }
 
-    public function updateAdmin($data){
+    public function updateAdmin($username, $data){
         return DB::table($this->table)
-        ->where('username', 'admin')
+        ->where('username', $username)
         ->update($data);
     }
 }

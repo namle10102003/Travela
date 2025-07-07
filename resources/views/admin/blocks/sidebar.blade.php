@@ -14,7 +14,7 @@
             </div>
             <div class="profile_info">
                 <span>Xin chào,</span>
-                <h2>Admin</h2>
+                <h2>{{ session('admin_fullname', 'Admin') }}</h2>
             </div>
         </div>
         <!-- /menu profile quick info -->
@@ -74,12 +74,14 @@
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
                         data-toggle="dropdown" aria-expanded="false">
                         <img src="{{ asset('admin/assets/images/user-profile/avt_admin.jpg') }}" alt="">
-                        @if (session()->has('admin'))
+                        @if (session()->has('admin_fullname'))
+                            {{ session('admin_fullname') }}
+                        @else
                             {{ session('admin') }}
                         @endif
                     </a>
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="javascript:;"> Thông tin cá nhân</a>
+                        <a class="dropdown-item" href="{{ route('admin.admin') }}"> Thông tin cá nhân</a>
                         <a class="dropdown-item" href="{{ route('admin.logout') }}"><i
                                 class="fa fa-sign-out pull-right"></i> Đăng xuất</a>
                     </div>
