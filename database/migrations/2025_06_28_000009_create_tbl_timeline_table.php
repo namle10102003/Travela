@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tbl_timeline', function (Blueprint $table) {
-            $table->bigIncrements('timelineId');
+            $table->bigIncrements('timeLineId');
             $table->unsignedBigInteger('tourId');
             $table->string('title');
             $table->text('description')->nullable();
