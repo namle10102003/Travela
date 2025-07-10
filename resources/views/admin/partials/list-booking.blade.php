@@ -27,7 +27,6 @@
                 <img src="{{ asset('admin/assets/images/icon/icon_office.png') }}" class="icon_payment" alt="">
             @endif
         </td>
-
         <td>
             @if ($booking->paymentStatus == 'n')
                 <span class="badge badge-danger">Chưa thanh toán</span>
@@ -35,7 +34,6 @@
                 <span class="badge badge-success">Đã thanh toán</span>
             @endif
         </td>
-
         <td>
             <div class="btn-group">
                 <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
@@ -44,12 +42,14 @@
                 <div class="dropdown-menu" x-placement="bottom-start"
                     style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(71px, 38px, 0px);">
                     @if ($booking->bookingStatus == 'b')
-                    <a class="dropdown-item confirm-booking" href="javascript:void(0)" data-bookingId="{{ $booking->bookingId }}"
-                        data-urlConfirm="{{ route('admin.confirm-booking') }}">Xác nhận</a>
+                        <a class="dropdown-item confirm-booking" href="javascript:void(0)" data-bookingId="{{ $booking->bookingId }}"
+                            data-urlConfirm="{{ route('admin.confirm-booking') }}">Xác nhận</a>
                     @endif
-                    <a class="dropdown-item finish-booking {{ $booking->hide }}" href="javascript:void(0)" data-bookingId="{{ $booking->bookingId }}"
-                        data-urlfinish="{{ route('admin.finish-booking') }}">Đã hoàn thành</a>
                     <a class="dropdown-item" href="{{ route('admin.booking-detail',['id' => $booking->bookingId]) }}">Xem chi tiết</a>
+                    @if ($booking->paymentStatus == 'y' && $booking->bookingStatus != 'f')
+                        <a class="dropdown-item finish-booking {{ $booking->hide }}" href="javascript:void(0)" data-bookingId="{{ $booking->bookingId }}"
+                            data-urlfinish="{{ route('admin.finish-booking') }}">Đã hoàn thành</a>
+                    @endif
                 </div>
             </div>
         </td>
