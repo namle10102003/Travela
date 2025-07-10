@@ -638,7 +638,7 @@ class DatabaseSeeder extends Seeder
             // Tour 7: Cần Thơ - Sóc Trăng
             [
                 'tourId' => 7,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
+                'imageUrl' => 'cong-chao-cho-noi-cai-rang.jpg',
                 'description' => 'Chợ nổi Cần Thơ.',
                 'uploadDate' => now(),
                 'created_at' => now(),
@@ -646,7 +646,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'tourId' => 7,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
+                'imageUrl' => 'cho-noi-cai-rang-can-tho-31.jpg',
                 'description' => 'Chợ nổi Cần Thơ.',
                 'uploadDate' => now(),
                 'created_at' => now(),
@@ -654,7 +654,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'tourId' => 7,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
+                'imageUrl' => 'tour-mien-tay-1-ngay-can-tho-cho-noi-cai-rang.jpg',
                 'description' => 'Chợ nổi Cần Thơ.',
                 'uploadDate' => now(),
                 'created_at' => now(),
@@ -662,16 +662,16 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'tourId' => 7,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
-                'description' => 'Chợ nổi Cần Thơ.',
+                'imageUrl' => 'tham-quan-nha-co-binh-thuy-co-kinh-hon-100-nam-tuoi.jpg',
+                'description' => 'Nhà cổ Bình Thủy',
                 'uploadDate' => now(),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'tourId' => 7,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
-                'description' => 'Chợ nổi Cần Thơ.',
+                'imageUrl' => 'ben-trong-nha-co-binh-thuy-can-tho.jpg',
+                'description' => 'Nhà cổ Bình Thủy',
                 'uploadDate' => now(),
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -679,7 +679,7 @@ class DatabaseSeeder extends Seeder
             // Tour 8: Hà Giang
             [
                 'tourId' => 8,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
+                'imageUrl' => 'du-lich-ha-giang-mua-hoa-tam-giac-mach-4n3d-bao-gom-ve-may-bay-65b3595d06ff9.jpg',
                 'description' => 'Cao nguyên đá Đồng Văn.',
                 'uploadDate' => now(),
                 'created_at' => now(),
@@ -687,7 +687,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'tourId' => 8,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
+                'imageUrl' => 'du-lich-ha-giang-quan-ba-dong-van-lung-cu-meo-vac-yen-minh-4n3d-634e1cdeafe11.jpg',
                 'description' => 'Cao nguyên đá Đồng Văn.',
                 'uploadDate' => now(),
                 'created_at' => now(),
@@ -695,7 +695,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'tourId' => 8,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
+                'imageUrl' => 'ha-giang-cao-nguyen-da-thac-ban-gioc-nguom-ngao-4n3d-6405a3559fbe5.jpg',
                 'description' => 'Cao nguyên đá Đồng Văn.',
                 'uploadDate' => now(),
                 'created_at' => now(),
@@ -703,7 +703,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'tourId' => 8,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
+                'imageUrl' => 'ha-giang-cao-nguyen-da-thac-ban-gioc-nguom-ngao-4n3d-6405a355a01c5.jpg',
                 'description' => 'Cao nguyên đá Đồng Văn.',
                 'uploadDate' => now(),
                 'created_at' => now(),
@@ -711,7 +711,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'tourId' => 8,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
+                'imageUrl' => 'tour-ha-giang-3n2d-dong-van-lung-cu-ma-pi-leng-song-nho-que-67594d35853ea.jpg',
                 'description' => 'Cao nguyên đá Đồng Văn.',
                 'uploadDate' => now(),
                 'created_at' => now(),
@@ -720,7 +720,7 @@ class DatabaseSeeder extends Seeder
             // Tour 9: Buôn Ma Thuột
             [
                 'tourId' => 9,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
+                'imageUrl' => 'check-in-voi-tuong-2-chu-voi-du-lich-viet.jpg',
                 'description' => 'Thủ phủ cà phê Buôn Ma Thuột.',
                 'uploadDate' => now(),
                 'created_at' => now(),
@@ -728,7 +728,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'tourId' => 9,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
+                'imageUrl' => 'tour-tay-nguyen-3-ngay-3-dem-7.jpg',
                 'description' => 'Thủ phủ cà phê Buôn Ma Thuột.',
                 'uploadDate' => now(),
                 'created_at' => now(),
@@ -736,7 +736,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'tourId' => 9,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
+                'imageUrl' => 'tour-tay-nguyen-3-ngay-3-dem-3.jpg',
                 'description' => 'Thủ phủ cà phê Buôn Ma Thuột.',
                 'uploadDate' => now(),
                 'created_at' => now(),
@@ -744,7 +744,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'tourId' => 9,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
+                'imageUrl' => 'thac-dray-nur-du-lich-tay-nguyen.jpg',
                 'description' => 'Thủ phủ cà phê Buôn Ma Thuột.',
                 'uploadDate' => now(),
                 'created_at' => now(),
@@ -752,7 +752,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'tourId' => 9,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
+                'imageUrl' => 'buong-lang-Ako-Dhong-tour-du-lich-tay-nguyen.jpg',
                 'description' => 'Thủ phủ cà phê Buôn Ma Thuột.',
                 'uploadDate' => now(),
                 'created_at' => now(),
@@ -761,7 +761,7 @@ class DatabaseSeeder extends Seeder
             // Tour 10: Côn Đảo
             [
                 'tourId' => 10,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
+                'imageUrl' => '3-du-lich-con-dao-3n3d-con-dao-40521ba2-68cd-4bf3-8215-e146938cc193.jpg',
                 'description' => 'Biển xanh và di tích Côn Đảo.',
                 'uploadDate' => now(),
                 'created_at' => now(),
@@ -769,7 +769,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'tourId' => 10,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
+                'imageUrl' => 'du-lich-con-dao-tham-quan-bao-tang-con-dao-5782bdba-84e9-4990-8c76-00e772e9494e.jpg',
                 'description' => 'Biển xanh và di tích Côn Đảo.',
                 'uploadDate' => now(),
                 'created_at' => now(),
@@ -777,7 +777,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'tourId' => 10,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
+                'imageUrl' => 'du-lich-con-dao-trai-phu-binh-c424bc03-606e-4220-8452-2742a2b47309.jpg',
                 'description' => 'Biển xanh và di tích Côn Đảo.',
                 'uploadDate' => now(),
                 'created_at' => now(),
@@ -785,7 +785,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'tourId' => 10,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
+                'imageUrl' => 'du-lich-con-dao-mieu-nam-co-4a99bcb1-b32a-4f16-80d2-db26f63a538c.jpg',
                 'description' => 'Biển xanh và di tích Côn Đảo.',
                 'uploadDate' => now(),
                 'created_at' => now(),
@@ -793,7 +793,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'tourId' => 10,
-                'imageUrl' => '5-du-khach-co-the-chiem-nguong-tron-ven-canh-tay-bac-o-dinh-fansipan_1732896696.jpg',
+                'imageUrl' => 'du-lich-con-dao-mieu-hoang-tu-cai.jpg',
                 'description' => 'Biển xanh và di tích Côn Đảo.',
                 'uploadDate' => now(),
                 'created_at' => now(),
