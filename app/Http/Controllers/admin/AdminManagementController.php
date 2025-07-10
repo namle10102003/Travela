@@ -46,6 +46,8 @@ class AdminManagementController extends Controller
         ];
         $update = $this->admin->updateAdmin($username, $dataUpdate);
         $newinfo = $this->admin->getAdmin($username);
+        // Cập nhật lại tên mới vào session để hiển thị đúng ngoài dashboard
+        $request->session()->put('admin_fullname', $newinfo->fullName);
         return response()->json([
             'success' => true,
             'data' => $newinfo
