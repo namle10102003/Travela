@@ -638,7 +638,7 @@ class DatabaseSeeder extends Seeder
             // Tour 7: Cần Thơ - Sóc Trăng
             [
                 'tourId' => 7,
-                'imageUrl' => 'cong-chao-cho-noi-cai-rang.jpg',
+                'imageUrl' => 'cho-noi-cai-rang.jpg',
                 'description' => 'Chợ nổi Cần Thơ.',
                 'uploadDate' => now(),
                 'created_at' => now(),
