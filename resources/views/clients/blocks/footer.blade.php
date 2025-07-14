@@ -130,6 +130,15 @@
     <script src="{{asset('clients/assets/js/custom-js.js')}}"></script>
     <script src="{{asset('clients/assets/js/jquery.datetimepicker.full.min.js')}}"></script>
 
+    <!-- Chatbot Button & Popup -->
+    <link rel="stylesheet" href="/clients/assets/css/chatbot-button.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <div class="chatbot-button">
+        <i class="fas fa-robot"></i>
+        <span class="notification" style="display:none;">1</span>
+    </div>
+    <script src="/clients/assets/js/chatbot-popup.js"></script>
+    <!-- End Chatbot Button & Popup -->
 </body>
 
 </html>

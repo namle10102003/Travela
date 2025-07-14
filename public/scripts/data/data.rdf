@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ex="http://example.org/du-lich#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:schema="http://schema.org/"
+>
+
+  <!-- Định nghĩa Ontology -->
+  <owl:Ontology rdf:about="http://example.org/du-lich#">
+    <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+    <owl:imports rdf:resource="http://schema.org/"/>
+  </owl:Ontology>
+
+  <!-- Định nghĩa các Classes -->
+  <owl:Class rdf:about="http://example.org/du-lich#DiemDen">
+    <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+    <rdfs:label xml:lang="vi">Điểm đến</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/du-lich#Tour">
+    <rdfs:subClassOf rdf:resource="http://schema.org/TouristTrip"/>
+    <rdfs:label xml:lang="vi">Tour du lịch</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/du-lich#AmThuc">
+    <rdfs:subClassOf rdf:resource="http://schema.org/FoodEstablishment"/>
+    <rdfs:label xml:lang="vi">Ẩm thực</rdfs:label>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/du-lich#DichVu">
+    <rdfs:subClassOf rdf:resource="http://schema.org/Service"/>
+    <rdfs:label xml:lang="vi">Dịch vụ</rdfs:label>
+  </owl:Class>
+
+  <!-- Định nghĩa các Properties -->
+  <owl:ObjectProperty rdf:about="http://example.org/du-lich#coDiemDen">
+    <rdfs:domain rdf:resource="http://example.org/du-lich#Tour"/>
+    <rdfs:range rdf:resource="http://example.org/du-lich#DiemDen"/>
+    <rdfs:label xml:lang="vi">Có điểm đến</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://example.org/du-lich#coAmThuc">
+    <rdfs:domain rdf:resource="http://example.org/du-lich#DiemDen"/>
+    <rdfs:range rdf:resource="http://example.org/du-lich#AmThuc"/>
+    <rdfs:label xml:lang="vi">Có ẩm thực</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://example.org/du-lich#coDichVu">
+    <rdfs:domain rdf:resource="http://example.org/du-lich#Tour"/>
+    <rdfs:range rdf:resource="http://example.org/du-lich#DichVu"/>
+    <rdfs:label xml:lang="vi">Có dịch vụ</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="http://example.org/du-lich#giaTour">
+    <rdfs:domain rdf:resource="http://example.org/du-lich#Tour"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:label xml:lang="vi">Giá tour</rdfs:label>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://example.org/du-lich#thoiGian">
+    <rdfs:domain rdf:resource="http://example.org/du-lich#Tour"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="vi">Thời gian</rdfs:label>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://example.org/du-lich#loaiTour">
+    <rdfs:domain rdf:resource="http://example.org/du-lich#Tour"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="vi">Loại tour</rdfs:label>
+  </owl:DatatypeProperty>
+
+  <!-- Ràng buộc và quy tắc -->
+  <owl:Restriction>
+    <owl:onProperty rdf:resource="http://example.org/du-lich#coDiemDen"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minCardinality>
+  </owl:Restriction>
+
+  <owl:Restriction>
+    <owl:onProperty rdf:resource="http://example.org/du-lich#coDichVu"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minCardinality>
+  </owl:Restriction>
+
+  <!-- Dữ liệu từ file data.rdf -->
+  <rdf:Description rdf:about="http://example.org/du-lich#hà_nội">
+    <ex:ten xml:lang="vi">Hà Nội</ex:ten>
+    <ex:loai xml:lang="vi">thanh_pho</ex:loai>
+    <ex:diem_noi_bat xml:lang="vi">Hồ Hoàn Kiếm</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Phố cổ</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Văn Miếu</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Lăng Chủ tịch Hồ Chí Minh</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Hồ Tây</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Chùa Trấn Quốc</ex:diem_noi_bat>
+    <ex:am_thuc xml:lang="vi">Phở bò</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bún chả Obama</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bún thang</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bánh cuốn Thanh Trì</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Cốm làng Vòng</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bánh tôm Hồ Tây</ex:am_thuc>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#hội_an">
+    <ex:ten xml:lang="vi">Hội An</ex:ten>
+    <ex:loai xml:lang="vi">thanh_pho</ex:loai>
+    <ex:diem_noi_bat xml:lang="vi">Phố cổ Hội An</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Chùa Cầu</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Bãi biển An Bàng</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Làng gốm Thanh Hà</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Làng rau Trà Quế</ex:diem_noi_bat>
+    <ex:am_thuc xml:lang="vi">Cao lầu</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Mì Quảng</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bánh mì Phượng</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Cơm gà Bà Buội</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bánh đập hến xào</ex:am_thuc>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#đà_nẵng">
+    <ex:ten xml:lang="vi">Đà Nẵng</ex:ten>
+    <ex:loai xml:lang="vi">thanh_pho</ex:loai>
+    <ex:diem_noi_bat xml:lang="vi">Bà Nà Hills</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Cầu Rồng</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Biển Mỹ Khê</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Ngũ Hành Sơn</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Chùa Linh Ứng</ex:diem_noi_bat>
+    <ex:am_thuc xml:lang="vi">Mì Quảng</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bánh tráng cuốn thịt heo</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bún chả cá</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Gỏi cá Nam Ô</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Hải sản tươi sống</ex:am_thuc>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#miền_trung_diệu_kỳ_5_ngày_4_đêm">
+    <ex:ten_tour xml:lang="vi">Hà Nội - Lạng Sơn - Cửa Khẩu Hữu Nghị - Cao Bằng - Thác Bản Giốc - Núi Mắt Thần - Hà Giang - Đồng Văn - Lũng Cú</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#hà_nội"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#lạng_sơn"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#cao_bằng"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#hà_giang"/>
+    <ex:thoi_gian xml:lang="vi">6 ngày 5 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Hãy cùng khám phá ba di sản thiên nhiên được UNESCO công nhận là di sản văn hóa thế giới: Công viên địa chất toàn cầu Cao nguyên đá Đồng Văn, Non nước Cao Bằng và Hoàng Thành Thăng Long.
+Chúng ta sẽ "chạm" đến điểm cực Bắc của Tổ quốc, nơi vang vọng niềm tự hào về chủ quyền biên giới quốc gia. Ngắm vẻ đẹp thơ mộng của con đường cây Sa Mộc dọc thôn Lô Lô Chải đến điểm Cực Bắc, công trình "Dải xanh biên cương" do du khách Vietravel và người dân địa phương chung tay vun trồng.
+Hãy để lòng mình say đắm trước vẻ đẹp hùng vĩ của hẻm vực Tu Sản, nơi sâu nhất Đông Nam Á, bên dòng sông Nho Quế dịu dàng uốn lượn.
+Đừng bỏ lỡ cơ hội chiêm ngưỡng thác Bản Giốc - thác nước duy nhất tại Việt Nam nằm trên đường biên giới và đại dốc 15 tầng Khau Cốc Chà - một trong những con dốc hiểm trở bậc nhất trên đèo Mẻ Pia.
+Nặng trĩu túi quà mang về với những đặc sản địa phương: tinh dầu hoa Hồi thơm nồng, hạt dẻ Trùng Khánh bùi ngọt, cao Ấu Tẩu quý hiếm, trà Shan Tuyết thơm ngát, Trâu Gác Bếp đậm đà hương vị núi rừng, và chẩm chéo cay nồng.
+Cuối cùng, thưởng thức sắc màu ẩm thực phong phú của vùng Đông Bắc và khám phá bản sắc văn hóa độc đáo của các dân tộc Tày, Nùng, H'Mông, Lô Lô Chải, …</ex:mo_ta>
+    <ex:gia xml:lang="vi">11.390.000 VND/Người lớn</ex:gia>
+    <ex:gia xml:lang="vi">10.500.000 VND/Trẻ em</ex:gia>
+    <ex:dich_vu xml:lang="vi">Khách sạn 4 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng + 3 bữa trưa</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Xe đưa đón</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Hướng dẫn viên</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Vé tham quan</ex:dich_vu>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#đà_nẵng_-_hội_an_4_ngày_3_đêm">
+    <ex:ten_tour xml:lang="vi">Hải Phòng - Hạ Long - Ninh Bình - Thung Nham - Tam đảo</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#hải_phòng"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#quảng_ninh"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#ninh_bình"/>
+    <ex:thoi_gian xml:lang="vi">4 ngày 3 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Du ngoạn vịnh Hạ Long, tham quan Hang Bụt và Thung Chim, khám phá phố cổ Hoa Lư.
+Tham quan Nhà thờ đá Phát Diệm, Nhà thờ đá Tam Đảo.
+Viếng đền Bà Chúa Thượng Ngàn, đền Sóc (Đền Gióng).</ex:mo_ta>
+    <ex:gia xml:lang="vi">10.800.000 VND/Người lớn</ex:gia>
+    <ex:gia xml:lang="vi">8.000.000 VND/Trẻ em</ex:gia>
+    <ex:dich_vu xml:lang="vi">Khách sạn 4 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Xe đưa đón</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Vé tham quan</ex:dich_vu>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#phú_quốc_cao_cấp_5_ngày_4_đêm">
+    <ex:ten_tour xml:lang="vi">Huế - Động Phong Nha</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#huế"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#quảng_bình"/>
+    <ex:thoi_gian xml:lang="vi">4 ngày 3 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Khám phá vẻ đẹp cổ kính của kinh thành Huế qua những di tích lịch sử như Đại Nội, chùa Thiên Mụ, và các lăng tẩm vua chúa triều Nguyễn.
+Tiếp đó, tour đưa bạn đến Quảng Bình để khám phá Động Phong Nha - một trong những kỳ quan thiên nhiên nổi tiếng thế giới, với hệ thống hang động kỳ ảo.
+Kết thúc hành trình bằng buổi chiều thư giãn tại bãi biển Nhật Lệ.</ex:mo_ta>
+    <ex:gia xml:lang="vi">3.200.000 VND/Người lớn</ex:gia>
+    <ex:gia xml:lang="vi">2.200.000 VND/Trẻ em</ex:gia>
+    <ex:dich_vu xml:lang="vi">Resort 4 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng buffet</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Spa 1 lần</ex:dich_vu>
+    <ex:loai_tour xml:lang="vi">cao_cap</ex:loai_tour>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#đà_nẵng_-_bà_nà_hills_3_ngày_2_đêm">
+    <ex:ten_tour xml:lang="vi">Đà Nẵng - Bà Nà Hills - Hội An</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#đà_nẵng"/>
+    <ex:thoi_gian xml:lang="vi">3 ngày 2 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Khám phá thành phố Đà Nẵng - thành phố đáng sống nhất Việt Nam, nơi hội tụ vẻ đẹp hiện đại xen lẫn thiên nhiên kỳ vĩ, từ bãi biển Mỹ Khê trải dài đến những cây cầu độc đáo bắc qua sông Hàn.
+Du khách sẽ được chiêm ngưỡng Cầu Rồng phun lửa, phun nước - biểu tượng sáng tạo và sức sống của thành phố biển miền Trung.
+Hành trình tiếp nối đến Bà Nà Hills, nơi được ví như "châu Âu thu nhỏ", với khí hậu mát mẻ quanh năm, Làng Pháp lãng mạn và Cầu Vàng nổi bật giữa mây trời.
+Ngoài cảnh đẹp, Đà Nẵng còn là thiên đường ẩm thực với những món đặc sản hấp dẫn như mì Quảng, bánh tráng cuốn thịt heo, hải sản tươi sống.
+Tour cũng đưa bạn đến phố cổ Hội An - di sản văn hóa thế giới, nơi lưu giữ vẻ đẹp cổ kính qua từng ngôi nhà, con đường đèn lồng và văn hóa truyền thống đặc sắc.
+Lịch trình được thiết kế khoa học, cân bằng giữa tham quan, vui chơi và nghỉ dưỡng, phù hợp cho cả gia đình, nhóm bạn hoặc du khách nước ngoài muốn khám phá vẻ đẹp miền Trung Việt Nam.</ex:mo_ta>
+    <ex:gia xml:lang="vi">3.500.000 VND/Người lớn</ex:gia>
+    <ex:gia xml:lang="vi">2.700.000 VND/Trẻ em</ex:gia>
+    <ex:dich_vu xml:lang="vi">Khách sạn 3 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Vé cáp treo</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Xe đưa đón</ex:dich_vu>
+    <ex:loai_tour xml:lang="vi">gia_dinh</ex:loai_tour>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#đảo_nam_du_-_hòn_tre_4_ngày_3_đêm">
+    <ex:ten_tour xml:lang="vi">Sài Gòn - Củ Chi - Mỹ Tho</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#sài_gòn"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#mỹ_tho"/>
+    <ex:thoi_gian xml:lang="vi">3 ngày 2 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Trải nghiệm hành trình khám phá thành phố Hồ Chí Minh – trung tâm kinh tế, văn hóa sôi động nhất Việt Nam – nơi giao thoa giữa hiện đại và truyền thống.
+Du khách sẽ được chiêm ngưỡng những công trình kiến trúc Pháp cổ kính như Nhà thờ Đức Bà, Bưu điện Thành phố, dạo bước qua phố đi bộ Nguyễn Huệ nhộn nhịp ánh đèn và thưởng thức ẩm thực đường phố đặc sắc.
+Hành trình tiếp nối với chuyến tham quan địa đạo Củ Chi – một trong những di tích lịch sử nổi bật, nơi thể hiện tinh thần chiến đấu kiên cường và sự sáng tạo phi thường của quân và dân Việt Nam trong thời kỳ kháng chiến.
+Không chỉ dừng lại ở những nét đặc trưng của thành phố, tour còn đưa bạn về với miền Tây sông nước thơ mộng tại Mỹ Tho. Tại đây, bạn sẽ được lênh đênh trên thuyền qua những con rạch nhỏ, lắng nghe đờn ca tài tử Nam Bộ, thưởng thức trái cây miệt vườn và các món ăn dân dã đậm đà bản sắc vùng miền. Toàn bộ lịch trình được thiết kế khoa học, kết hợp giữa khám phá lịch sử, văn hóa và nghỉ dưỡng nhẹ nhàng. Đây là lựa chọn lý tưởng cho gia đình, nhóm bạn, cặp đôi hay du khách quốc tế mong muốn hiểu sâu hơn về Việt Nam từ quá khứ hào hùng đến hiện tại phát triển không ngừng.</ex:mo_ta>
+    <ex:gia xml:lang="vi">3.200.000 VND/Người lớn</ex:gia>
+    <ex:gia xml:lang="vi">2.200.000 VND/Trẻ em</ex:gia>
+    <ex:dich_vu xml:lang="vi">Khách sạn 5 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Vé tham quan</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Hướng dẫn viên</ex:dich_vu>
+    <ex:loai_tour xml:lang="vi">phuot_bien</ex:loai_tour>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#tuần_trăng_mật_phú_quốc_5_ngày_4_đêm">
+    <ex:ten_tour xml:lang="vi">Nha Trang - Tháp Bà Ponagar - Biển Nhũ Tiên - Vinwonder - Làng gốm Bàu Trúc - Khám phá cao tốc mới</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#nha_trang"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#phan_thiết"/>
+    <ex:thoi_gian xml:lang="vi">3 ngày 2 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Kết nối văn hóa Việt - Chăm bằng những trải nghiệm văn hóa thực tế với người bản địa, góp phần bảo tồn di sản nghề gốm của người Chăm.
+Nghe người Chăm bản địa giới thiệu về Làng gốm Bàu Trúc - nơi linh hồn đất và lửa hòa quyện cùng văn hóa Chăm.
+Thưởng thức nhịp trống Paranưng và Ghi Năng rộn ràng.
+Khám phá nghệ thuật làm gốm không cần bàn xoay, đặc biệt trải nghiệm "vuốt gốm" cùng nghệ nhân tài hoa.
+"Xuyên không" khám phá văn hóa Nha Trang Xưa qua các không gian làng nghề và nhà cổ trăm tuổi.
+Trải nghiệm workshop tái chế vỏ ốc, vỏ sò - qua bàn tay khéo léo của chính mình Quý khách thỏa sức sáng tạo những tác phẩm giá trị từ đại dương.
+Trải nghiệm tuyến cao tốc Vĩnh Hảo - Phan Thiết kết với biển Cà Ná và cung đường ven biển DT702 đẹp bậc nhất Nam Trung Bộ.
+Thưởng thức đặc sản đặc sản "Cừu nấu nho xanh Phan Rang - 121 món ăn tiêu biểu Việt Nam".
+Tháp Bà Ponagar - thưởng thức vũ điệu Chăm và tham quan quần thể kiến trúc độc đáo của người Chăm Pa cổ xưa.
+Thỏa thích tắm biển Nhũ Tiên - với vẻ đẹp thơ mộng, tựa như nàng tiên đang ngủ giữa thiên nhiên hữu tình.</ex:mo_ta>
+    <ex:gia xml:lang="vi">2.390.000 VND/Người lớn</ex:gia>
+    <ex:gia xml:lang="vi">2.000.000 VND/Trẻ em</ex:gia>
+    <ex:dich_vu xml:lang="vi">Khách sạn 4 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Vé tham quan</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Xe đưa đón</ex:dich_vu>
+    <ex:loai_tour xml:lang="vi">gia đình</ex:loai_tour>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#ẩm_thực_hà_nội_2_ngày_1_đêm">
+    <ex:ten_tour xml:lang="vi">Ẩm thực Hà Nội 2 ngày 1 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#hà_nội"/>
+    <ex:thoi_gian xml:lang="vi">2 ngày 1 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Tour chuyên về ẩm thực với các món ngon Hà Nội như phở, bún chả, chả cá...</ex:mo_ta>
+    <ex:gia xml:lang="vi">2.500.000 VND</ex:gia>
+    <ex:dich_vu xml:lang="vi">Khách sạn 3 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">5 bữa ăn đặc sản</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Hướng dẫn viên ẩm thực</ex:dich_vu>
+    <ex:loai_tour xml:lang="vi">am_thuc</ex:loai_tour>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#quy_nhơn">
+    <ex:ten xml:lang="vi">Quy Nhơn</ex:ten>
+    <ex:loai xml:lang="vi">thanh_pho</ex:loai>
+    <ex:diem_noi_bat xml:lang="vi">Bãi biển Kỳ Co</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Eo Gió</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Ghềnh Ráng Tiên Sa</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Tháp Đôi</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Cù Lao Xanh</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Đầm Thị Nại</ex:diem_noi_bat>
+    <ex:am_thuc xml:lang="vi">Bánh xèo tôm nhảy</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bún chả cá</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bánh hỏi cháo lòng</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Nem nướng</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Hải sản tươi sống</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bánh ít lá gai</ex:am_thuc>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#sapa_-_fansipan_3_ngày_2_đêm">
+    <ex:ten_tour xml:lang="vi">Sapa - Fansipan 3 ngày 2 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#lào_cai"/>
+    <ex:thoi_gian xml:lang="vi">3 ngày 2 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Chinh phục nóc nhà Đông Dương và khám phá văn hóa dân tộc vùng cao</ex:mo_ta>
+    <ex:gia xml:lang="vi">3.500.000 VND</ex:gia>
+    <ex:dich_vu xml:lang="vi">Homestay bản Cát Cát</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Cáp treo Fansipan</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Hướng dẫn viên địa phương</ex:dich_vu>
+    <ex:loai_tour xml:lang="vi">trekking</ex:loai_tour>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#huế">
+    <ex:ten xml:lang="vi">Huế</ex:ten>
+    <ex:loai xml:lang="vi">thanh_pho</ex:loai>
+    <ex:diem_noi_bat xml:lang="vi">Đại Nội Huế</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Chùa Thiên Mụ</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Lăng Khải Định</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Lăng Tự Đức</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Sông Hương</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Cầu Tràng Tiền</ex:diem_noi_bat>
+    <ex:am_thuc xml:lang="vi">Bún bò Huế</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Cơm hến</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bánh bèo</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bánh lọc</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bánh nậm</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Chè Huế các loại</ex:am_thuc>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#phú_yên">
+    <ex:ten xml:lang="vi">Phú Yên</ex:ten>
+    <ex:loai xml:lang="vi">thanh_pho</ex:loai>
+    <ex:diem_noi_bat xml:lang="vi">Gành Đá Đĩa</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Bãi Xép</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Mũi Điện (Mũi Đại Lãnh)</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Hòn Yến</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Vịnh Xuân Đài</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Đầm Ô Loan</ex:diem_noi_bat>
+    <ex:am_thuc xml:lang="vi">Bánh canh hẹ</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Sò huyết đầm Ô Loan</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Mắt cá ngừ đại dương</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bò một nắng muối kiến vàng</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Gỏi cá mai</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Cháo hàu</ex:am_thuc>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#hạ_long">
+    <ex:ten xml:lang="vi">Hạ Long</ex:ten>
+    <ex:loai xml:lang="vi">thanh_pho</ex:loai>
+    <ex:diem_noi_bat xml:lang="vi">Vịnh Hạ Long</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Đảo Titop</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Hang Sửng Sốt</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Đảo Tuần Châu</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Làng chài Cửa Vạn</ex:diem_noi_bat>
+    <ex:am_thuc xml:lang="vi">Chả mực Hạ Long</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Sá sùng</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Cù kỳ nướng</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Ngán nướng</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Hàu nướng mỡ hành</ex:am_thuc>
+  </rdf:Description>
+
+  <!-- Dữ liệu từ file data1.rdf -->
+  <rdf:Description rdf:about="http://example.org/du-lich#hà_nội_-_vịnh_hạ_long_2_ngày_1_đêm">
+    <ex:ten_tour xml:lang="vi">Hà Nội - Vịnh Hạ Long 2 ngày 1 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#hà_nội"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#hạ_long"/>
+    <ex:thoi_gian xml:lang="vi">2 ngày 1 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Khám phá thủ đô Hà Nội và kỳ quan vịnh Hạ Long</ex:mo_ta>
+    <ex:gia xml:lang="vi">2.200.000 VND</ex:gia>
+    <ex:dich_vu xml:lang="vi">Khách sạn 3 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">1 bữa sáng</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Tàu tham quan vịnh</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Xe đưa đón</ex:dich_vu>
+    <ex:loai_tour xml:lang="vi">pho_thong</ex:loai_tour>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#đà_lạt_mộng_mơ_3_ngày_2_đêm">
+    <ex:ten_tour xml:lang="vi">Đà Lạt mộng mơ 3 ngày 2 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#đà_lạt"/>
+    <ex:thoi_gian xml:lang="vi">3 ngày 2 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Khám phá thành phố ngàn hoa với khí hậu mát mẻ quanh năm</ex:mo_ta>
+    <ex:gia xml:lang="vi">3.200.000 VND</ex:gia>
+    <ex:dich_vu xml:lang="vi">Resort 3 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Xe đưa đón</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Hướng dẫn viên</ex:dich_vu>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#hành_trình_di_sản_6_ngày_5_đêm">
+    <ex:ten_tour xml:lang="vi">Hành trình di sản 6 ngày 5 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#hà_nội"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#ninh_bình"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#huế"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#hội_an"/>
+    <ex:thoi_gian xml:lang="vi">6 ngày 5 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Tour các di sản văn hóa thế giới tại Việt Nam</ex:mo_ta>
+    <ex:gia xml:lang="vi">9.800.000 VND</ex:gia>
+    <ex:dich_vu xml:lang="vi">Khách sạn 4 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Vé tham quan</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Xe limousine</ex:dich_vu>
+    <ex:loai_tour xml:lang="vi">van_hoa</ex:loai_tour>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#buôn_ma_thuột">
+    <ex:ten xml:lang="vi">Buôn Ma Thuột</ex:ten>
+    <ex:loai xml:lang="vi">thanh_pho</ex:loai>
+    <ex:diem_noi_bat xml:lang="vi">Buôn Đôn</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Thác Dray Nur</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Bảo tàng cà phê</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Hồ Lắk</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Thác Dray Sáp</ex:diem_noi_bat>
+    <ex:am_thuc xml:lang="vi">Gà nướng Bản Đôn</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Cơm lam</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Cà phê Buôn Ma Thuột</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bún đỏ</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Rượu cần</ex:am_thuc>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#tp_hcm">
+    <ex:ten xml:lang="vi">TP.HCM</ex:ten>
+    <ex:loai xml:lang="vi">thanh_pho</ex:loai>
+    <ex:diem_noi_bat xml:lang="vi">Nhà thờ Đức Bà</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Bưu điện Trung tâm</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Dinh Độc Lập</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Phố đi bộ Nguyễn Huệ</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Chợ Bến Thành</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Landmark 81</ex:diem_noi_bat>
+    <ex:am_thuc xml:lang="vi">Cơm tấm</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Hủ tiếu Nam Vang</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bánh mì</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bún mắm</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Gỏi cuốn</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bánh tráng nướng Đà Lạt</ex:am_thuc>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#phú_quốc_thiên_đường_biển_đảo_4_ngày_3_đêm">
+    <ex:ten_tour xml:lang="vi">Phú Quốc thiên đường biển đảo 4 ngày 3 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#phú_quốc"/>
+    <ex:thoi_gian xml:lang="vi">4 ngày 3 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Thư giãn tại những bãi biển đẹp nhất Phú Quốc</ex:mo_ta>
+    <ex:gia xml:lang="vi">5.500.000 VND</ex:gia>
+    <ex:dich_vu xml:lang="vi">Resort 4 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Xe đưa đón sân bay</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Tour đảo</ex:dich_vu>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#lào_cai">
+    <ex:ten xml:lang="vi">Lào Cai</ex:ten>
+    <ex:loai xml:lang="vi">tinh</ex:loai>
+    <ex:diem_noi_bat xml:lang="vi">Núi Fansipan</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Thung lũng Mường Hoa</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Bản Cát Cát</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Thác Bạc</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Cầu kính Rồng Mây</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Đỉnh đèo Ô Quy Hồ</ex:diem_noi_bat>
+    <ex:am_thuc xml:lang="vi">Thắng cố</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Lẩu cá hồi</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Thịt trâu gác bếp</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Cơm lam</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Rượu táo mèo</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Hạt dẻ Sapa</ex:am_thuc>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#huế_-_đà_nẵng_-_hội_an_5_ngày_4_đêm">
+    <ex:ten_tour xml:lang="vi">Huế - Đà Nẵng - Hội An 5 ngày 4 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#huế"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#đà_nẵng"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#hội_an"/>
+    <ex:thoi_gian xml:lang="vi">5 ngày 4 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Tour di sản miền Trung với Đại Nội Huế, Bà Nà Hills và phố cổ Hội An</ex:mo_ta>
+    <ex:gia xml:lang="vi">6.500.000 VND</ex:gia>
+    <ex:dich_vu xml:lang="vi">Khách sạn 4 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng + 3 bữa trưa</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Vé tham quan</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Hướng dẫn viên</ex:dich_vu>
+    <ex:loai_tour xml:lang="vi">van_hoa</ex:loai_tour>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#hà_nội_-_hạ_long_-_sapa_6_ngày_5_đêm">
+    <ex:ten_tour xml:lang="vi">Hà Nội - Hạ Long - Sapa 6 ngày 5 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#hà_nội"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#hạ_long"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#lào_cai"/>
+    <ex:thoi_gian xml:lang="vi">6 ngày 5 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Khám phá thủ đô Hà Nội, vịnh Hạ Long và núi rừng Sapa</ex:mo_ta>
+    <ex:gia xml:lang="vi">8.500.000 VND</ex:gia>
+    <ex:dich_vu xml:lang="vi">Khách sạn 3-4 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Tàu tham quan vịnh</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Xe limousine</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Hướng dẫn viên</ex:dich_vu>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#quy_nhơn_-_phú_yên_4_ngày_3_đêm">
+    <ex:ten_tour xml:lang="vi">Quy Nhơn - Phú Yên 4 ngày 3 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#quy_nhơn"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#phú_yên"/>
+    <ex:thoi_gian xml:lang="vi">4 ngày 3 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Khám phá bãi biển Kỳ Co, Gành Đá Đĩa và thưởng thức hải sản tươi sống</ex:mo_ta>
+    <ex:gia xml:lang="vi">5.200.000 VND</ex:gia>
+    <ex:dich_vu xml:lang="vi">Resort 4 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Tour đảo</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Xe đưa đón</ex:dich_vu>
+    <ex:loai_tour xml:lang="vi">bien_dao</ex:loai_tour>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#bắc_-_trung_-_nam_7_ngày_6_đêm">
+    <ex:ten_tour xml:lang="vi">Bắc - Trung - Nam 7 ngày 6 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#hà_nội"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#đà_nẵng"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#tp_hcm"/>
+    <ex:thoi_gian xml:lang="vi">7 ngày 6 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Tour khám phá 3 miền đất nước bằng máy bay nội địa</ex:mo_ta>
+    <ex:gia xml:lang="vi">15.000.000 VND</ex:gia>
+    <ex:dich_vu xml:lang="vi">Khách sạn 4 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Vé máy bay</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Hướng dẫn viên</ex:dich_vu>
+    <ex:loai_tour xml:lang="vi">lien_tuyen</ex:loai_tour>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#hà_giang">
+    <ex:ten xml:lang="vi">Hà Giang</ex:ten>
+    <ex:loai xml:lang="vi">tinh</ex:loai>
+    <ex:diem_noi_bat xml:lang="vi">Cột cờ Lũng Cú</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Đèo Mã Pí Lèng</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Cao nguyên đá Đồng Văn</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Phố cổ Đồng Văn</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Dinh thự họ Vương</ex:diem_noi_bat>
+    <ex:am_thuc xml:lang="vi">Thắng dền</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bánh tam giác mạch</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Thắng cố</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Phở chua</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Lợn cắp nách</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Rượu ngô</ex:am_thuc>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#hà_giang_loop_4_ngày_3_đêm">
+    <ex:ten_tour xml:lang="vi">Hà Giang Loop 4 ngày 3 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#hà_giang"/>
+    <ex:thoi_gian xml:lang="vi">4 ngày 3 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Hành trình xe máy khám phá đèo Mã Pí Lèng, cao nguyên đá Đồng Văn</ex:mo_ta>
+    <ex:gia xml:lang="vi">4.800.000 VND</ex:gia>
+    <ex:dich_vu xml:lang="vi">Thuê xe máy</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Homestay</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Bảo hiểm</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Hướng dẫn viên</ex:dich_vu>
+    <ex:loai_tour xml:lang="vi">phuot</ex:loai_tour>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#tp_hcm_-_mekong_3_ngày_2_đêm">
+    <ex:ten_tour xml:lang="vi">TP.HCM - Mekong 3 ngày 2 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#tp_hcm"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#mekong"/>
+    <ex:thoi_gian xml:lang="vi">3 ngày 2 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Khám phá sông nước miền Tây và chợ nổi Cái Răng</ex:mo_ta>
+    <ex:gia xml:lang="vi">2.800.000 VND</ex:gia>
+    <ex:dich_vu xml:lang="vi">Khách sạn 3 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Thuyền tham quan</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Hướng dẫn viên</ex:dich_vu>
+    <ex:loai_tour xml:lang="vi">mien_tay</ex:loai_tour>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#teambuilding_biển_quy_nhơn_3_ngày_2_đêm">
+    <ex:ten_tour xml:lang="vi">Teambuilding biển Quy Nhơn 3 ngày 2 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#quy_nhơn"/>
+    <ex:thoi_gian xml:lang="vi">3 ngày 2 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Tour tổ chức hoạt động team building kết hợp nghỉ dưỡng biển</ex:mo_ta>
+    <ex:gia xml:lang="vi">3.500.000 VND/người</ex:gia>
+    <ex:dich_vu xml:lang="vi">Resort 4 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Hoạt động team building</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn uống theo yêu cầu</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">MC chương trình</ex:dich_vu>
+    <ex:loai_tour xml:lang="vi">doan_khach</ex:loai_tour>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#du_lịch_mạo_hiểm_tây_bắc_5_ngày_4_đêm">
+    <ex:ten_tour xml:lang="vi">Du lịch mạo hiểm Tây Bắc 5 ngày 4 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#lào_cai"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#hà_giang"/>
+    <ex:thoi_gian xml:lang="vi">5 ngày 4 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Tour trekking và offroad khám phá vùng cao Tây Bắc</ex:mo_ta>
+    <ex:gia xml:lang="vi">7.200.000 VND</ex:gia>
+    <ex:dich_vu xml:lang="vi">Homestay</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Thuê xe offroad</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Bảo hiểm</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Hướng dẫn viên</ex:dich_vu>
+    <ex:loai_tour xml:lang="vi">mao_hien</ex:loai_tour>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#đặc_sắc_tây_bắc_5_ngày_4_đêm">
+    <ex:ten_tour xml:lang="vi">Đặc sắc Tây Bắc 5 ngày 4 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#lào_cai"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#hà_giang"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#sơn_la"/>
+    <ex:thoi_gian xml:lang="vi">5 ngày 4 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Khám phá vẻ đẹp núi rừng Tây Bắc và văn hóa các dân tộc thiểu số</ex:mo_ta>
+    <ex:gia xml:lang="vi">5.500.000 VND</ex:gia>
+    <ex:dich_vu xml:lang="vi">Homestay &amp; khách sạn 3 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Xe đưa đón</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Hướng dẫn viên địa phương</ex:dich_vu>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#gia_đình_vui_vẻ_tại_đà_nẵng_4_ngày_3_đêm">
+    <ex:ten_tour xml:lang="vi">Gia đình vui vẻ tại Đà Nẵng 4 ngày 3 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#đà_nẵng"/>
+    <ex:thoi_gian xml:lang="vi">4 ngày 3 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Tour thiết kế riêng cho gia đình với các hoạt động vui chơi tại công viên châu Á</ex:mo_ta>
+    <ex:gia xml:lang="vi">8.000.000 VND</ex:gia>
+    <ex:dich_vu xml:lang="vi">Khách sạn gia đình</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Vé công viên</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Xe đưa đón</ex:dich_vu>
+    <ex:loai_tour xml:lang="vi">gia_dinh</ex:loai_tour>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#nha_trang">
+    <ex:ten xml:lang="vi">Nha Trang</ex:ten>
+    <ex:loai xml:lang="vi">thanh_pho</ex:loai>
+    <ex:diem_noi_bat xml:lang="vi">Tháp Bà Ponagar</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">VinWonders Nha Trang</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Hòn Mun</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Hòn Tằm</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Chợ Đầm</ex:diem_noi_bat>
+    <ex:am_thuc xml:lang="vi">Bún chả cá</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Nem nướng Ninh Hòa</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bánh căn</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Hải sản tươi sống</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Yến sào</ex:am_thuc>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#quảng_ngãi">
+    <ex:ten xml:lang="vi">Quảng Ngãi</ex:ten>
+    <ex:loai xml:lang="vi">thanh_pho</ex:loai>
+    <ex:diem_noi_bat xml:lang="vi">Đảo Lý Sơn</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Bãi biển Mỹ Khê Quảng Ngãi</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Biển Sa Huỳnh</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Thác Trắng Minh Long</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Khu chứng tích Sơn Mỹ</ex:diem_noi_bat>
+    <ex:am_thuc xml:lang="vi">Gỏi tỏi Lý Sơn</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Cua huỳnh đế</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Gỏi cá trích</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bánh xèo Quảng Ngãi</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Mắm nhum</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Chim mía nướng</ex:am_thuc>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#phú_quốc">
+    <ex:ten xml:lang="vi">Phú Quốc</ex:ten>
+    <ex:loai xml:lang="vi">dao</ex:loai>
+    <ex:diem_noi_bat xml:lang="vi">Bãi Sao</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Bãi Dài</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Vinpearl Safari</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Grand World</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Cáp treo Hòn Thơm</ex:diem_noi_bat>
+    <ex:am_thuc xml:lang="vi">Ghẹ Hàm Ninh</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Nhum biển nướng mỡ hành</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bún quậy Kiến Xây</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Gỏi cá trích</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Nước mắm Phú Quốc</ex:am_thuc>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#yoga_&amp;_thiền_tại_đà_lạt_4_ngày_3_đêm">
+    <ex:ten_tour xml:lang="vi">Yoga &amp; Thiền tại Đà Lạt 4 ngày 3 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#đà_lạt"/>
+    <ex:thoi_gian xml:lang="vi">4 ngày 3 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Khóa tu dưỡng tâm hồn kết hợp yoga và thiền định</ex:mo_ta>
+    <ex:gia xml:lang="vi">6.000.000 VND</ex:gia>
+    <ex:dich_vu xml:lang="vi">Resort thiền</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">3 bữa ăn chay/ngày</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Lớp yoga hàng ngày</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Hướng dẫn viên</ex:dich_vu>
+    <ex:loai_tour xml:lang="vi">suc_khoe</ex:loai_tour>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#biển_đảo_miền_trung_4_ngày_3_đêm">
+    <ex:ten_tour xml:lang="vi">Biển đảo miền Trung 4 ngày 3 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#đà_nẵng"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#hội_an"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#quy_nhơn"/>
+    <ex:thoi_gian xml:lang="vi">4 ngày 3 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Tour biển đảo với những bãi biển đẹp nhất miền Trung</ex:mo_ta>
+    <ex:gia xml:lang="vi">4.800.000 VND</ex:gia>
+    <ex:dich_vu xml:lang="vi">Khách sạn 4 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Xe đưa đón</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Tàu tham quan đảo</ex:dich_vu>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#đà_lạt">
+    <ex:ten xml:lang="vi">Đà Lạt</ex:ten>
+    <ex:loai xml:lang="vi">thanh_pho</ex:loai>
+    <ex:diem_noi_bat xml:lang="vi">Hồ Xuân Hương</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Quảng trường Lâm Viên</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Thung lũng Tình Yêu</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Langbiang</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Đồi chè Cầu Đất</ex:diem_noi_bat>
+    <ex:am_thuc xml:lang="vi">Lẩu gà lá é</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bánh tráng nướng</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Nem nướng Bà Hùng</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Bánh căn</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Sữa đậu nành nóng</ex:am_thuc>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#toàn_cảnh_việt_nam_7_ngày_6_đêm">
+    <ex:ten_tour xml:lang="vi">Toàn cảnh Việt Nam 7 ngày 6 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#hà_nội"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#hạ_long"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#huế"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#hội_an"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#tp_hcm"/>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#mekong"/>
+    <ex:thoi_gian xml:lang="vi">7 ngày 6 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Tour dành cho những ai muốn trải nghiệm đa dạng văn hóa Việt Nam</ex:mo_ta>
+    <ex:gia xml:lang="vi">12.000.000 VND</ex:gia>
+    <ex:dich_vu xml:lang="vi">Khách sạn 4 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng + 4 bữa trưa</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Máy bay nội địa</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Xe đưa đón</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Hướng dẫn viên</ex:dich_vu>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#sơn_la">
+    <ex:ten xml:lang="vi">Sơn La</ex:ten>
+    <ex:loai xml:lang="vi">tinh</ex:loai>
+    <ex:diem_noi_bat xml:lang="vi">Đồi chè Mộc Châu</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Rừng thông Bản Áng</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Thác Dải Yếm</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Động Sơn Mộc Hương</ex:diem_noi_bat>
+    <ex:diem_noi_bat xml:lang="vi">Happy Land Mộc Châu</ex:diem_noi_bat>
+    <ex:am_thuc xml:lang="vi">Bê chao</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Cá suối nướng</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Sữa chua nếp cẩm</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Thịt trâu gác bếp</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Cơm lam</ex:am_thuc>
+    <ex:am_thuc xml:lang="vi">Nậm pịa</ex:am_thuc>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/du-lich#khám_phá_đà_nẵng_3_ngày_2_đêm">
+    <ex:ten_tour xml:lang="vi">Khám phá Đà Nẵng 3 ngày 2 đêm</ex:ten_tour>
+    <ex:diem_den rdf:resource="http://example.org/du-lich#đà_nẵng"/>
+    <ex:thoi_gian xml:lang="vi">3 ngày 2 đêm</ex:thoi_gian>
+    <ex:mo_ta xml:lang="vi">Tour bao gồm tham quan Bà Nà Hills, Cầu Rồng, Biển Mỹ Khê và thưởng thức ẩm thực địa phương</ex:mo_ta>
+    <ex:gia xml:lang="vi">2.500.000 VND</ex:gia>
+    <ex:dich_vu xml:lang="vi">Khách sạn 3 sao</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Ăn sáng</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Xe đưa đón</ex:dich_vu>
+    <ex:dich_vu xml:lang="vi">Hướng dẫn viên</ex:dich_vu>
+  </rdf:Description>
+</rdf:RDF>
