@@ -102,15 +102,15 @@
                     <div class="row pb-55">
                         <div class="col-md-6">
                             <div class="tour-include-exclude mt-30">
-                                <h5>Bao gồm và không bao gồm</h5>
+                                <h5>Bao gồm</h5>
                                 <ul class="list-style-one check mt-25">
-                                    <li><i class="far fa-check"></i> Dịch vụ đón và trả khách</li>
-                                    <li><i class="far fa-check"></i> 1 bữa ăn mỗi ngày</li>
-                                    <li><i class="far fa-check"></i> Bữa tối trên du thuyền & Sự kiện âm nhạc</li>
-                                    <li><i class="far fa-check"></i> Tham quan 7 địa điểm tuyệt vời nhất trong thành phố
+                                    <li><i class="fas fa-check"></i> Dịch vụ đón và trả khách</li>
+                                    <li><i class="fas fa-check"></i> 1 bữa ăn mỗi ngày</li>
+                                    <li><i class="fas fa-check"></i> Bữa tối trên du thuyền & Sự kiện âm nhạc</li>
+                                    <li><i class="fas fa-check"></i> Tham quan 7 địa điểm tuyệt vời nhất trong thành phố
                                     </li>
-                                    <li><i class="far fa-check"></i> Nước đóng chai trên xe buýt</li>
-                                    <li><i class="far fa-check"></i> Phương tiện di chuyển Xe buýt du lịch hạng sang
+                                    <li><i class="fas fa-check"></i> Nước đóng chai trên xe buýt</li>
+                                    <li><i class="fas fa-check"></i> Phương tiện di chuyển Xe buýt du lịch hạng sang
                                     </li>
                                 </ul>
                             </div>
@@ -119,12 +119,12 @@
                             <div class="tour-include-exclude mt-30">
                                 <h5>Không bao gồm</h5>
                                 <ul class="list-style-one mt-25">
-                                    <li><i class="far fa-times"></i> Tiền boa</li>
-                                    <li><i class="far fa-times"></i> Đón và trả khách tại khách sạn</li>
-                                    <li><i class="far fa-times"></i> Bữa trưa, Đồ ăn & Đồ uống</li>
-                                    <li><i class="far fa-times"></i> Nâng cấp tùy chọn lên một ly</li>
-                                    <li><i class="far fa-times"></i> Dịch vụ bổ sung</li>
-                                    <li><i class="far fa-times"></i> Bảo hiểm</li>
+                                    <li><i class="fas fa-times"></i> Tiền boa</li>
+                                    <li><i class="fas fa-times"></i> Đón và trả khách tại khách sạn</li>
+                                    <li><i class="fas fa-times"></i> Bữa trưa, Đồ ăn & Đồ uống</li>
+                                    <li><i class="fas fa-times"></i> Nâng cấp tùy chọn lên một ly</li>
+                                    <li><i class="fas fa-times"></i> Dịch vụ bổ sung</li>
+                                    <li><i class="fas fa-times"></i> Bảo hiểm</li>
                                 </ul>
                             </div>
                         </div>
