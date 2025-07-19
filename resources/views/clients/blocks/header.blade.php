@@ -104,7 +104,7 @@
                                                 href="{{ route('about') }}">Giới thiệu</a></li>
                                         <li
                                             class="dropdown {{ Request::is('tours') || Request::is('team') || Request::is('tour-detail/*') ? 'active' : '' }}">
-                                            <a href="#">Tours</a>
+                                            <a href="#">Tours <i class="fas fa-chevron-down" style="font-size: 14px; margin-left: 4px;"></i></a>
                                             <ul>
                                                 <li><a href="{{ route('tours') }}">Tours</a></li>
                                                 <li><a href="{{ route('team') }}">Hướng dẫn viên</a></li>
