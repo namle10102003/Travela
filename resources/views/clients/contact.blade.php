@@ -61,7 +61,7 @@
                             <div class="icon"><i class="fas fa-phone"></i></div>
                             <div class="content">
                                 <h5>Cần bất kỳ việc khẩn cấp nào</h5>
-                                <div class="text"><i class="far fa-phone"></i> <a href="callto:+84935564091">+84 935564091</a></div>
+                                <div class="text"><i class="fas fa-phone"></i> <a href="callto:+84935564091">+84 935564091</a></div>
                             </div>
                         </div>
                     </div>
