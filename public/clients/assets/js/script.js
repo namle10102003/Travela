@@ -7,8 +7,8 @@
 
     Note: This is Main JS File.
 -----------------------------------------------------------------------------------
-	CSS INDEX
-	===================
+    CSS INDEX
+    ===================
     ## Header Style
     ## Dropdown menu
     ## Submenu
@@ -72,20 +72,7 @@
         });
         
         // ## Submenu Dropdown Toggle
-        if ($('.main-header .navigation li.dropdown ul').length) {
-            $('.main-header .navigation li.dropdown').append('<div class="dropdown-btn"><span class="far fa-angle-down"></span></div>');
-
-            //Dropdown Button
-            $('.main-header .navigation li.dropdown .dropdown-btn').on('click', function () {
-                $(this).prev('ul').slideToggle(500);
-                $(this).prev('.megamenu').slideToggle(800);
-            });
-            
-            //Disable dropdown parent link
-            $('.navigation li.dropdown > a').on('click', function (e) {
-                e.preventDefault();
-            });
-        }
+        // Code to remove the dropdown-btn with far fa-angle-down icon for Tours menu
         
         //Submenu Dropdown Toggle
         if ($('.main-header .main-menu').length) {
@@ -115,22 +102,22 @@
          
         
         // ## Search Box
-		$('.nav-search > button').on('click', function () {
-			$('.nav-search form').toggleClass('hide');
-		});
+        $('.nav-search > button').on('click', function () {
+            $('.nav-search form').toggleClass('hide');
+        });
         
         
         // Hide Box Search WHEN CLICK OUTSIDE
-		if ($(window).width() > 767){
-			$('body').on('click', function (event) {
-				if ($('.nav-search > button').has(event.target).length == 0 && !$('.nav-search > button').is(event.target)
-					&& $('.nav-search form').has(event.target).length == 0 && !$('.nav-search form').is(event.target)) {
-					if ($('.nav-search form').hasClass('hide') == false) {
-						$('.nav-search form').toggleClass('hide');
-					};
-				}
-			});
-		}
+        if ($(window).width() > 767){
+            $('body').on('click', function (event) {
+                if ($('.nav-search > button').has(event.target).length == 0 && !$('.nav-search > button').is(event.target)
+                    && $('.nav-search form').has(event.target).length == 0 && !$('.nav-search form').is(event.target)) {
+                    if ($('.nav-search form').hasClass('hide') == false) {
+                        $('.nav-search form').toggleClass('hide');
+                    };
+                }
+            });
+        }
         
         
         // ## Sidebar Menu
@@ -426,24 +413,24 @@
         
         // ## Destinations Filter
         $('.destinations-active').imagesLoaded(function () {
-			var items = $('.destinations-active').isotope({
-				itemSelector: '.item',
-				percentPosition: true,
-			});
-			// items on button click
-			$('.destinations-nav').on('click', 'li', function () {
-				var filterValue = $(this).attr('data-filter');
-				items.isotope({
-					filter: filterValue
-				});
-			});
-			// menu active class
-			$('.destinations-nav li').on('click', function (event) {
-				$(this).siblings('.active').removeClass('active');
-				$(this).addClass('active');
-				event.preventDefault();
-			});
-		});
+            var items = $('.destinations-active').isotope({
+                itemSelector: '.item',
+                percentPosition: true,
+            });
+            // items on button click
+            $('.destinations-nav').on('click', 'li', function () {
+                var filterValue = $(this).attr('data-filter');
+                items.isotope({
+                    filter: filterValue
+                });
+            });
+            // menu active class
+            $('.destinations-nav li').on('click', function (event) {
+                $(this).siblings('.active').removeClass('active');
+                $(this).addClass('active');
+                event.preventDefault();
+            });
+        });
         
         
         // ## Price Range Fliter jQuery UI

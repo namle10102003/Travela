@@ -93,7 +93,7 @@
                                                 href="{{ route('about') }}">Giới thiệu</a></li>
                                         <li
                                             class="dropdown {{ Request::is('tours') || Request::is('team') || Request::is('tour-detail/*') ? 'active' : '' }}">
-                                            <a href="#">Tours</a>
+                                            <a href="#">Tours <i class="fas fa-chevron-down" style="font-size: 14px; margin-left: 4px;"></i></a>
                                             <ul>
                                                 <li><a href="{{ route('tours') }}">Tours</a></li>
                                                 <li><a href="{{ route('team') }}">Hướng dẫn viên</a></li>
@@ -113,12 +113,15 @@
 
                         <!-- Nav Search -->
                         <div class="nav-search">
-                            <button class="far fa-search"></button>
+                            <button type="button" class="btn" style="background: transparent; border: none;">
+                                <i class="fas fa-search" style="font-size: 18px;"></i>
+                            </button>
                             <form action="{{ route('search-voice-text') }}" class="hide" method="GET">
                                 <input type="text" name="keyword" placeholder="Search" class="searchbox" required>
-                                <i class="fa fa-microphone" aria-hidden="true" style="margin: 0 16px"
-                                    id="voice-search"></i>
-                                <button type="submit" class="searchbutton far fa-search"></button>
+                                <i class="fas fa-microphone" aria-hidden="true" style="margin: 0 16px" id="voice-search"></i>
+                                <button type="submit" class="searchbutton btn" style="background: transparent; border: none;">
+                                    <i class="fas fa-search" style="font-size: 18px;"></i>
+                                </button>
                             </form>
                         </div>
 
