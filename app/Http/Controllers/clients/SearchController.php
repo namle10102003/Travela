@@ -68,34 +68,10 @@ class SearchController extends Controller
 
         $keyword = $request->input('keyword');
 
-        // Gọi API Python đã xử lý để lấy danh sách tour tìm kiếm
-        try {
-            $apiUrl = 'http://127.0.0.1:5555/api/search-tours';
-            $response = Http::get($apiUrl, [
-                'keyword' => $keyword
-            ]);
-
-            if ($response->successful()) {
-                $resultTours = $response->json('related_tours');
-            } else {
-                $resultTours = [];
-            }
-        } catch (\Exception $e) {
-            // Xử lý lỗi khi gọi API
-            $resultTours = [];
-            \Log::error('Lỗi khi gọi API liên quan: ' . $e->getMessage());
-        }
-
-        // dd($resultTours);
-        if ($resultTours) {
-            $tours = $this->tours->toursSearch($resultTours);
-
-        } else {
-            $dataSearch = [
-                'keyword' => $keyword
-            ];
-            $tours = $this->tours->searchTours($dataSearch);
-        }
+        $dataSearch = [
+            'keyword' => $keyword
+        ];
+        $tours = $this->tours->searchTours($dataSearch);
 
         // dd($tours);
 
