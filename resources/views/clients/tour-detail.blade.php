@@ -253,7 +253,7 @@
                         <ul class="list-style-one">
                             <li><i class="far fa-envelope"></i> <a
                                     href="emilto:Namle10102003@gmail.com">Namle10102003@gmail.com</a></li>
-                            <li><i class="far fa-phone-volume"></i> <a href="callto:+84935564091">+84 935564091</a></li>
+                            <li><i class="fas fa-phone-volume"></i> <a href="callto:+84935564091">+84 935564091</a></li>
                         </ul>
                     </div>
                     @if (!empty($tourRecommendations))
